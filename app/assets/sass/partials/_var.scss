@@ -7,11 +7,15 @@
 /***********************/
 
 $logoFont: 'GrandHotel-Regular';
+
 $sans: 'OpenSans-Book', sans-serif;
 $sansItal: 'OpenSans-BookItalic', sans-serif;
 $sansBold: 'OpenSans-Bold', sans-serif;
 $sansBoldItal: 'OpenSans-BoldItalic', sans-serif;
 $sansLight: 'OpenSans-Light', sans-serif;
+$sansLightItal: 'OpenSans-LightItalic', sans-serif;
+$sansSemibold: 'OpenSans-Semibold', sans-serif;
+$sansSemiboldItal: 'OpenSans-SemiboldItalic', sans-serif;
 
 $serif: 'Sentinel-Book', serif;
 $serifItal: 'Sentinel-BookItalic', serif;
@@ -35,8 +39,11 @@ $blueish: #718087;
 $blueBright: #0074e4;
 
 $blueTrans: rgba(0,116,228,.75);
+$lightBlueTrans: rgba(0,116,228,.5);
 $darkBlueTrans: rgba(24,52,93,.85);
 $greenTrans: rgba(116,192,5,.75);
+
+$green: #74c005;
 
 $bgLight: #f8fbff;
 $offWhite: #f8fbff;
@@ -44,7 +51,6 @@ $offWhite: #f8fbff;
 // $black: #212425;
 // $blue: #5ba4e5;
 // $deepBlue: #2f8cde;
-// $green: #9fbb58;
 // $yellow: #ffe600;
 // $beige: #e9e8dd;
 
@@ -60,9 +66,11 @@ $slate: #282d31;
 
 // $red: #e25440;
 // $orange: #F2A925;
-// $grey: #718087;
-// $midGrey: #7d878a;
-// $lightGrey: #e2edf2;
+$grey: #718087;
+$midGrey: #939da5;
+$lightGrey: #e2edf2;
+
+
 
 // $brown: #aaa9a2;
 // $midBrown: #c0bfb6;
@@ -167,3 +175,4 @@ $pinkButton: #D01040;
 // Avenir-HeavyItalic
 // Avenir-Black
 // Avenir-BlackItalic
+
