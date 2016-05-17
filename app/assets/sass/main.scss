@@ -524,7 +524,7 @@ input {
 #logo {
 	position: absolute !important;
 	left: 20px;
-	z-index: 1000;
+	z-index: 1501;
 	.logo {
 		img {
 			max-height:100px;
@@ -1114,7 +1114,7 @@ a {
   position: fixed;
   z-index: 1500;
   min-width: 100%;
-  background: #fff !important;
+  background: #fff;
 }
 
 // #nav, .nav-flex, .nav-logo-wrapper, .nav-ghost-wrapper, .nav-map-wrapper, .nav-social-wrapper, #logo, #logo a, #logo a img {
@@ -1147,16 +1147,56 @@ a {
 
 .mobile-menu:before {
 	content: "\2630";
-	color: $blue !important;
+	color: $blue;
 	font-size: 3.3rem;
 }
 .mobile-menu {
-	background: none !important;
-	border: none !important;
+	background: none;
+	border: none;
 	padding: 0 15px;
 	margin: 0;
 }
 
+#nav-mobile {
+	position: absolute;
+	z-index: 1500;
+	margin: 0 auto;
+	display: flex;
+	justify-content: flex-end;
+	width: 100%;
+	a {
 
 
+	}
+}
 
+.nav-mobile-ul {
+	font-size: 20px;
+	background: rgba(238,238,238,1);
+	width: 100%;
+	text-align: center;
+	border-left: 1px solid #ddd;
+	&:first-child {
+		border-top: 4px solid $blue;
+	}
+}
+.nav-mobile-li {
+	padding: 10px;
+	border-bottom: 1px solid #ddd;
+	color: #242628;
+	&:hover {
+		color: $blue;
+	}
+}
+
+.collapsed {
+	display: none !important;
+}
+
+// .modal-mask {
+// 	// position: absolute;
+// 	display: block;
+//   // z-index: 0;
+// 	background-color: #fff;
+//   opacity: .9;
+// }

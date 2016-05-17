@@ -36,8 +36,7 @@
 <!-- ================================ -->  
 <div id="nav" class="nav sticky">
 
-  <div class="nav-flex" id="nav-top" role="navigation">
-    
+  <div class="nav-flex" id="nav-top" role="navigation">  
 
     <div class="nav-logo-wrapper">
       <div id="logo" class="nav-logo-top">
@@ -47,10 +46,8 @@
       </div>
     </div>
 
+    <div class="nav-ghost-wrapper"></div>
 
-    <div class="nav-ghost-wrapper">
-
-    </div>
     <div class="nav-map-wrapper sm-hide">
       <ul class="nav-map-ul">
         <li class="nav-map-li">
@@ -82,13 +79,41 @@
 
     <div class="nav-sm-only">
       <a>
-        <button type="button" class="mobile-menu collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+        <!-- <button type="button" class="mobile-menu collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+         -->
+        <button type="button" class="mobile-menu"> 
           <span class="hidden">Menu</span>
         </button>
       </a>
     </div>
 
-  </div><!-- .nav-top -->
+  </div><!-- .nav-flex -->
+
+  <div id="nav-mobile" class="nav-sm-only collapsed">
+    <ul class="nav-mobile-ul">
+      <a class="smoothScroll" href="#">
+        <li class="nav-mobile-li">
+          Home
+        </li>
+      </a>
+      <a class="smoothScroll" href="#resources">
+        <li class="nav-mobile-li">
+          About
+        </li>
+      </a>
+      <a class="smoothScroll" href="#reviews">
+        <li class="nav-mobile-li">
+          Reviews 
+        </li>
+      </a>
+      <a class="smoothScroll" href="#featured-categories">
+        <li class="nav-mobile-li">
+          Portfolio
+        </li>
+      </a>
+    </ul>
+  </div>
+
 </div>
 
 
@@ -742,6 +767,8 @@ style="display: none">
     </div>
   </div>
 </div>
+
+
 
 </div><!-- .main -->
 
