@@ -8,11 +8,23 @@
 
   <!-- Mobile Specific Meta -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  
+
+  <script src="./assets/lib/angular/angular.min.js"></script>
+
+  <!-- app config -->
+  <script src="./assets/js/app.js"></script>
+
+  <!-- controllers -->
+  <script src="./assets/js/controllers/MainController.js"></script>  
+
+  <!-- directives -->
+  <script src="./assets/js/directives/reviews.js"></script>
+  <script src="./assets/js/directives/resources.js"></script>  
+  <script src="./assets/js/directives/products.js"></script>  
+
   <link rel="stylesheet" href="./assets/lib/bootstrap/css/bootstrap.css">
   <link rel="stylesheet" href="./assets/lib/font-awesome/font-awesome.min.css">
   <link rel="stylesheet" href="./assets/css/main.css">
-
 
 </head>
 <body>
@@ -22,14 +34,14 @@
 <!-- ================================ -->  
 <!-- ========== START: NAV ========== -->
 <!-- ================================ -->  
-<div id="nav" class="nav">
+<div id="nav" class="nav sticky">
 
   <div class="nav-flex" id="nav-top" role="navigation">
     
 
     <div class="nav-logo-wrapper">
       <div id="logo" class="nav-logo-top">
-        <a class="logo" style="margin-bottom:-50px">
+        <a href="#" class="logo" style="margin-bottom:-50px">
           <img src="assets/images/logo.png">
         </a>
       </div>
@@ -39,33 +51,41 @@
     <div class="nav-ghost-wrapper">
 
     </div>
-    <div class="nav-map-wrapper">
+    <div class="nav-map-wrapper sm-hide">
       <ul class="nav-map-ul">
         <li class="nav-map-li">
-          <a href="#"> About </a>
+          <a class="smoothScroll" href="#"> Home </a>
         </li>
         <li class="nav-map-li">
-          <a href="#slides"> Portfolio </a>
+          <a class="smoothScroll" href="#resources"> About </a>
         </li>
         <li class="nav-map-li">
-          <a href="#reviews"> Reviews </a>
+          <a class="smoothScroll" href="#reviews"> Reviews </a>
         </li>
         <li class="nav-map-li">
-          <a href="#"> Features </a>
+          <a class="smoothScroll" href="#featured-categories"> Portfolio </a>
         </li>
         <li class="nav-map-li">
-          <a href="#"> Quote </a>
+          <a href="#open-modal"> Contact </a>
         </li>
       </ul>
     </div>
 
-    <div class="nav-social-wrapper">
+    <div class="nav-social-wrapper sm-hide">
       <div class="nav-social-top">
         <i class="fa fa-facebook-square"></i>
         <i class="fa fa-twitter-square"></i>
         <i class="fa fa-google-plus-square"></i>
         <i class="fa fa-houzz"></i>
       </div>
+    </div>
+
+    <div class="nav-sm-only">
+      <a>
+        <button type="button" class="mobile-menu collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="hidden">Menu</span>
+        </button>
+      </a>
     </div>
 
   </div><!-- .nav-top -->
@@ -87,7 +107,7 @@ style="display: none">
 
 
 <div class="hero-banner-wrapper">
-<!-- ======================================== -->  
+<!-- ======================================== --> 
 <!-- ============== START: HERO ============= -->
 <!-- ======================================== -->
   <div class="hero ct" id="hero" style="background: url(assets/images/hero01.jpg); background-size: cover; background-position: center center;">
@@ -108,7 +128,7 @@ style="display: none">
           <input placeholder="Enter your email address...">
         </form>
         <div class="hero-cta-btn-submit">
-          <button> Submit </button>
+          <button type="submit"> Submit </button>
         </div>
       </div>
     </div>
@@ -118,66 +138,89 @@ style="display: none">
 <!-- =========== START: BANNER =========== -->
 <!-- ===================================== -->
   <div class="banner" id="banner">
-    <div class="">
-      <div class="banner-wrapper">
-        <img src="assets/images/icon02.png">
-        <p class="flex-1">
-          <span id="banner-a" class="bold hidden-on-mobile">
-            Download the Checklist &nbsp;&rarr;
-          </span>
-          <span id="banner-b" class="bold">
-            10 Tips for a Perfect Pool
-          </span>
-        </p>
+    <div class="banner-wrapper">
+      <a href="#open-modal"><img src="assets/images/icon02.png"></a>
+      <p class="flex-1">
+        <span id="banner-a" class="bold hidden-on-mobile">
+          Download the Checklist &nbsp;&rarr;
+        </span>
+        <span id="banner-b" class="bold">
+          10 Tips for a Perfect Pool
+        </span>
+      </p>
       <a href="#open-modal" style="color:white"><button class="btn btn-main"> Download</button></a>
-      </div>
     </div>
   </div>
+
 
 <!--=======================================-->  
 </div><!-- .hero-banner-wrapper ===========-->
 <!--=======================================-->  
 
-
-<!-- ==================================== -->
-<!-- =========== START: MODAL =========== -->
-<!-- ==================================== -->
-<div class="modal" id="modal" style="display: none">
-  <!-- create partial form.html -->
-  <form>
-    <input placeholder="Your Name">
-    <input placeholder="Email Address">
-    <input placeholder="Phone Number">
-  </form>
-</div>
-<!-- vvv====vvv -->
-<!-- OPEN-MODAL -->
-<!-- ===vvvv=== -->
-<div class="modal-dialog" id="open-modal">
-  <div class="modal-content">
-    <header class="modal-header ct">
-      <a class="modal-close" data-dismiss="modal" aria-hidden="true" href="#"><span class="hidden">Close</span></a>
-      <br><br>
-      <h4 class="modal-title ct"> Get ready for summer!</h4>
-      <p> Enter your information below to get <em>10 Tips to a Perfect Pool</em> </p>
-    </header>
-
-    <div class="modal-body ct">
-      <form action="#" id="subForm" method="post">
-        <input id="fieldName" name="cm-name" type="text" placeholder="Your Name" required="">
-        <input id="fieldEmail" name="cm-krkyju-krkyju" type="email" placeholder="Email Address" required="">
-        <button class="button-add button-pink wide" type="submit">Download Now </button>
-        <p>No spam. Unsubscribe any time.</p>
-      </form>
-    </div>
+<section id="featured-categories">
+  <div class="featured-category" style="background-image: url(assets/images/slide07.jpg)">
+    <a href="#" class="fa fa-star-o">
+      <h2> Residential Pools </h2>
+    </a>
   </div>
-</div>
+  <div class="featured-category" style="background-image: url(assets/images/slide02.jpg)">
+    <a href="#" class="fa fa-lightbulb-o">
+      <h2> Waterfalls </h2>
+    </a>
+  </div>
+  <div class="featured-category" style="background-image: url(assets/images/slide08.jpg)">
+    <a href="#" class="fa fa-home">
+      <h2> Spas </h2>
+    </a>
+  </div>
+  <div class="featured-category" style="background-image: url(assets/images/slide02.jpg)">
+    <a href="#" class="fa fa-wrench">
+      <h2> Outdoor Kitchens </h2>
+    </a>
+  </div>
+  <div class="featured-category" style="background-image: url(assets/images/slide04.jpg)">
+    <a href="#" class="fa fa-signal">
+      <h2> Patios </h2>
+    </a>
+  </div>
+  <div class="featured-category" style="background-image: url(assets/images/slide05.jpg)">
+    <a href="#" class="fa fa-newspaper-o">
+      <h2> Decks </h2>
+    </a>
+  </div>
+</section>
+
+<section id="featured-posts">
+  <div class="featured-post" style="background-image: url(assets/images/slide14.jpg)">
+    <a href="#">
+      <h2 class="meta-type story-type"> Arbors, Pergolas &amp; Cabanas </h2>
+      <div class="post-meta">
+        <span> Diane Arthur on 16 May 2016 </span>
+      </div>
+    </a>
+  </div>  <div class="featured-post" style="background-image: url(assets/images/slide06.jpg)">
+    <a href="#">
+      <h2 class="meta-type gallery-type"> Decks, Patios &amp; Hardscapes </h2>
+      <div class="post-meta">
+        <span> Bob Arthur on 13 May 2016 </span>
+      </div>
+    </a>
+  </div>  <div class="featured-post" style="background-image: url(assets/images/slide09.jpg)">
+    <a href="#">
+      <h2 class="meta-type gallery-type"> Fireplaces &amp; Firepits </h2>
+      <div class="post-meta">
+        <span> Diane Arthur on 13 May 2016 </span>
+      </div>
+    </a>
+  </div>
+</section>
+<div class="clearfix"></div>
 
 
 <!-- ===================================== -->  
 <!-- ========== START: RESOURCES ========= -->
 <!-- ===================================== -->  
-<div class="resources below-fold" id="resources">
+<div class="resources" id="resources">
   <h2>Why Sun Ray Pools?</h2>
   
   <div class="resources-wrapper">
@@ -199,7 +242,7 @@ style="display: none">
               <div class="caption">
                 <p> Eros meis vidit ad usu, viris vivendo an sit, etiam oporteat quo te. Cu ius bonorum molestiae. Id mea wisi necessitatibus, at duo purto omnis. Hinc vivendo te vix. </p>
                 <p> Sonet ridens concludaturque vix ne. </p>
-                <a href="#"> Contact Us </a>
+                <a href="#open-modal"> Contact Us </a>
               </div>
             </div>
           </div>
@@ -220,13 +263,12 @@ style="display: none">
               <div class="caption">
                 <p> Aeterno maiestatis pri an, idque ullum antiopam vel eu. Mucius accusata iracundia ea qui, ei est graecis adipiscing, eam eu. Diceret probatus eu ius, id vel nostro omnesque moderatius.  </p>
                 <p> Congue percipit has te. </p>
-                <a href="#"> Learn More </a>
+                <a href="#open-modal"> Learn More </a>
               </div>
             </div>
           </div>
         </section>
       </li>
-
 
       <li class="xs-hide">
         <section class="xs-hide sm-hide">
@@ -242,7 +284,7 @@ style="display: none">
               <div class="caption">
                 <p> Lorem ipsum dolor sit amet, an mei velit minim denique. Ut quot mediocrem hendrerit duo, nibh tamquam docendi pro an. </p>
                 <p> That's Sun Ray Pools. </p>
-                <a href="#"> Get an Estimate </a>
+                <a href="#open-modal"> Get an Estimate </a>
               </div>
             </div>
           </div>
@@ -277,7 +319,7 @@ style="display: none">
                 </div>
 
                 <div class="caption-a-sm">
-                  <a href="#"> Contact Us </a>
+                  <a href="#open-modal"> Contact Us </a>
                 </div>
 
               </div>
@@ -310,7 +352,7 @@ style="display: none">
                 </div>
 
                 <div class="caption-a-sm">
-                  <a href="#">Learn More </a>
+                  <a href="#open-modal">Learn More </a>
                 </div>
 
               </div>
@@ -343,7 +385,7 @@ style="display: none">
                 </div>
 
                 <div class="caption-a-sm">
-                  <a href="#"> Get an Estimate </a>
+                  <a href="#open-modal"> Get an Estimate </a>
                 </div>
 
               </div>
@@ -372,7 +414,7 @@ style="display: none">
           &ldquo;Sun Ray Pools took great care of us.&rdquo;
         </p>
         <h6>Robert Smith, Rowlett</h6>
-        <a><i class="fa fa-sun-o"></i></a>
+        <a><i class="fa fa-picture-o"></i></a>
       </div>
     </div>
   </div>
@@ -413,226 +455,187 @@ style="display: none">
 </div><!-- reviews-headshots-wrapper -->
 
 
-<!-- ====================================== -->
-<!-- ========= PRODUCTS & PORTFOLIO ======= -->
-<!-- ====================================== -->
-<div id="products-portfolio-wrapper">
+<!-- ===================================== -->  
+<!-- ========== START: RESOURCES ========= -->
+<!-- ===================================== -->  
+<div class="resources" id="resources2">
+  <h2> Additional Info </h2>
+  
+  <div class="resources-wrapper">
+    <!--=============================-->
+    <!-- MD/LG SCREENS ONLY (<768px) -->
+    <!--=============================-->
+    <ul class="sm-hide-ul">
+      <li class="sm-hide">
+        <section class="xs-hide sm-hide">
+          <div class="col-sm-4 col-sm-offset-0 col-xs-10 col-xs-offset-1">
+            <div class="resource">
+              <div class="img-wrapper">
+                <img src="assets/images/resource04.jpg" class="resource">
+                <div class="img-after"><h3 class="ct">
+                  About Us
+                </h3></div>
+              </div>
+              <div class="img-after"></div>
+              <div class="caption">
+                <p> Eros meis vidit ad usu, viris vivendo an sit, etiam oporteat quo te. Cu ius bonorum molestiae. Id mea wisi necessitatibus, at duo purto omnis. Hinc vivendo te vix. </p>
+                <p> Sonet ridens concludaturque vix ne. </p>
+                <a href="#open-modal"> Contact Us </a>
+              </div>
+            </div>
+          </div>
+        </section>
+      </li>
+    
+      <li class="xs-hide">
+        <section class="xs-hide sm-hide">
+          <div class="col-sm-4 col-sm-offset-0 col-xs-10 col-xs-offset-1">
+            <div class="resource">
+              <div class="img-wrapper">
+                <img src="assets/images/resource05.jpg" class="resource">
+                <div class="img-after"><h3 class="ct">
+                  Financing
+                </h3></div>
+              </div>
+              <div class="img-after"></div>
+              <div class="caption">
+                <p> Aeterno maiestatis pri an, idque ullum antiopam vel eu. Mucius accusata iracundia ea qui, ei est graecis adipiscing, eam eu. Diceret probatus eu ius, id vel nostro omnesque moderatius.  </p>
+                <p> Congue percipit has te. </p>
+                <a href="#open-modal"> Learn More </a>
+              </div>
+            </div>
+          </div>
+        </section>
+      </li>
 
-  <!-- ===================== -->
-  <!-- ===== START: PRODUCTS -->
-  <div id="products">
-    <div id="featured-products">
-      <div class="col-sm-2 col-xs-3">
+      <li class="xs-hide">
+        <section class="xs-hide sm-hide">
+          <div class="col-sm-4 col-sm-offset-0 col-xs-10 col-xs-offset-1">
+            <div class="resource">
+              <div class="img-wrapper">
+                <img src="assets/images/resource06.jpg" class="resource">
+                <div class="img-after"><h3 class="ct">
+                  FAQs
+                </h3></div>
+              </div>
+              <div class="img-after"></div>
+              <div class="caption">
+                <p> Lorem ipsum dolor sit amet, an mei velit minim denique. Ut quot mediocrem hendrerit duo, nibh tamquam docendi pro an. </p>
+                <p> That's Sun Ray Pools. </p>
+                <a href="#open-modal"> Get an Estimate </a>
+              </div>
+            </div>
+          </div>
+        </section>
+      </li>
+    </ul>
 
-        <div class="featured-product">
-          <a href="#">
-            <i class="fa fa-sun-o"></i>
-            <h4>Residential Pools</h4>
-          </a>
-        </div>
-        <div class="featured-product">
-          <a href="#">
-            <i class="fa fa-sun-o"></i>
-            <h4>Waterfalls</h4>
-          </a>
-        </div>
-        <div class="featured-product">
-          <a href="#">
-            <i class="fa fa-sun-o"></i>
-            <h4>Spas</h4>
-          </a>
-        </div>
-        <div class="featured-product">
-          <a href="#">
-            <i class="fa fa-sun-o"></i>
-            <h4>Outdoor Kitchens</h4>
-          </a>
-        </div>
-        <div class="featured-product">
-          <a href="#">
-            <i class="fa fa-sun-o"></i>
-            <h4>Patios</h4>
-          </a>
-        </div>
-        <div class="featured-product">
-          <a href="#">
-            <i class="fa fa-sun-o"></i>
-            <h4>Decks</h4>
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="clearfix"></div>
+    <!--=============================-->
+    <!-- SM&XS SCREENS ONLY (<768px) -->
+    <!--=============================-->
+    <ul class="md-hide-ul">
+      <li class="md-hide li-sm">
+        <section class="sm-only">
+          <div class="resource-wrapper-sm">
+            <div class="resource-sm">
 
-  <!-- ====================== -->
-  <!-- ===== START: PORTFOLIO -->
-  <div id="portfolio">
-    <div id="featured-projects">
-      <div class="col-sm-2 col-xs-3">
+              <div class="img-wrapper-sm">
+                <img src="assets/images/resource04.jpg" class="resource">
+              </div>
 
-        <div class="featured-project">
-          <a href="#">
-            <i class="fa fa-sun-o"></i>
-            <h4>Residential Pools</h4>
-          </a>
-        </div>
-        <div class="featured-project">
-          <a href="#">
-            <i class="fa fa-sun-o"></i>
-            <h4>Waterfalls</h4>
-          </a>
-        </div>
-        <div class="featured-project">
-          <a href="#">
-            <i class="fa fa-sun-o"></i>
-            <h4>Spas</h4>
-          </a>
-        </div>
-        <div class="featured-project">
-          <a href="#">
-            <i class="fa fa-sun-o"></i>
-            <h4>Outdoor Kitchens</h4>
-          </a>
-        </div>
-      </div>
-    </div>
-  </div><!-- #portfolio -->
-</div><!-- .products-portfolio-wrapper -->
+              <div class="img-banner-sm">
+                <div class="banner-h3-sm">
+                  <h3 class="ct">
+                    About Us
+                  </h3>
+                </div>
+              </div>
+
+              <div class="caption-sm">
+                <div class="caption-p-sm">
+                  <p> Eros meis vidit ad usu, viris vivendo an sit, etiam oporteat quo te. Cu ius bonorum molestiae. </p>
+                </div>
+
+                <div class="caption-a-sm">
+                  <a href="#open-modal"> Contact Us </a>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </section>
+      </li>
+      <div class="clearfix"></div>
+    
+      <li class="md-hide li-sm">
+        <section class="sm-only">
+          <div class="resource-wrapper-sm">
+            <div class="resource-sm">
+
+              <div class="img-wrapper-sm">
+                <img src="assets/images/resource05.jpg" class="resource">
+              </div>
+
+              <div class="img-banner-sm">
+                <div class="banner-h3-sm">
+                  <h3 class="ct">
+                    Financing
+                  </h3>
+                </div>
+              </div>
+
+              <div class="caption-sm">
+                <div class="caption-p-sm">
+                  <p> Aeterno maiestatis pri an, idque ullum antiopam vel eu. Mucius accusata. </p>
+                </div>
+
+                <div class="caption-a-sm">
+                  <a href="#open-modal">Learn More </a>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </section>
+      </li>
+      <div class="clearfix"></div>
+    
+      <li class="md-hide li-sm">
+        <section class="sm-only">
+          <div class="resource-wrapper-sm">
+            <div class="resource-sm">
+
+              <div class="img-wrapper-sm">
+                <img src="assets/images/resource06.jpg" class="resource">
+              </div>
+
+              <div class="img-banner-sm">
+                <div class="banner-h3-sm">
+                  <h3 class="ct">
+                    FAQs
+                  </h3>
+                </div>
+              </div>
+
+              <div class="caption-sm">
+                <div class="caption-p-sm">
+                  <p> Lorem ipsum dolor sit amet, an mei velit minim denique. </p>
+                </div>
+
+                <div class="caption-a-sm">
+                  <a href="#open-modal"> Get an Estimate </a>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </section>
+      </li>
+      <div class="clearfix"></div>
+    </ul>
+  </div><!-- .resources-wrapper -->
+</div><!-- #resources -->
 <div class="clearfix"></div>
-
-
-<!-- ============= -->  
-<!-- START: SLIDES -->
-<!-- ============= -->
-<div class="slides row" id="slides">
-  <h1 class="ct"> Portfolio </h1>
-  <div class="slide">
-    <ul class="slide-ul">
-      <li class="col-xs-4">
-        <div class="img-wrapper">
-          <img src="assets/images/slide01.jpg">
-          <div class="img-after"></div>
-        </div>
-        <div class="icon">
-          <i class="fa fa-heart-o"></i>
-        </div>
-        <div class="caption">
-          <span>$390,000</span>
-        </div>
-      </li>
-      <li class="col-xs-4">
-        <div class="img-wrapper">
-          <img src="assets/images/slide02.jpg">
-          <div class="img-after"></div>
-        </div>
-        <div class="icon">
-          <i class="fa fa-heart-o"></i>
-        </div>
-        <div class="caption">
-          <span>$20,000</span>
-        </div>
-      </li>
-      <li class="col-xs-4">
-        <div class="img-wrapper">
-          <img src="assets/images/slide03.jpg">
-          <div class="img-after"></div>
-        </div>
-        <div class="icon">
-          <i class="fa fa-heart-o"></i>
-        </div>
-        <div class="caption">
-          <span>$225,000</span>
-        </div>
-      </li>
-    </ul>
-  </div>
-</div>
-<div class="slides row" id="slides">
-  <div class="slide row">
-    <ul class="slide-ul">
-      <li class="col-xs-4">
-        <div class="img-wrapper">
-          <img src="assets/images/slide04.jpg">
-          <div class="img-after"></div>
-        </div>
-        <div class="icon">
-          <i class="fa fa-heart-o"></i>
-        </div>
-        <div class="caption">
-          <span>$1,975,000</span>
-        </div>
-      </li>
-      <li class="col-xs-4">
-        <div class="img-wrapper">
-          <img src="assets/images/slide05.jpg">
-          <div class="img-after"></div>
-        </div>
-        <div class="icon">
-          <i class="fa fa-heart-o"></i>
-        </div>
-        <div class="caption">
-          <span>$4,000</span>
-        </div>
-      </li>
-      <li class="col-xs-4">
-        <div class="img-wrapper">
-          <img src="assets/images/slide06.jpg">
-          <div class="img-after"></div>
-        </div>
-        <div class="icon">
-          <i class="fa fa-heart-o"></i>
-        </div>
-        <div class="caption">
-          <span>$410,000</span>
-        </div>
-      </li>
-    </ul>
-  </div>
-</div>
-<div class="slides row" id="slides">
-  <div class="slide row">
-    <ul class="slide-ul">
-      <li class="col-xs-4">
-        <div class="img-wrapper">
-          <img src="assets/images/slide07.jpg">
-          <div class="img-after"></div>
-        </div>
-        <div class="icon">
-          <i class="fa fa-heart-o"></i>
-        </div>
-        <div class="caption">
-          <span>$400,000</span>
-        </div>
-      </li>
-      <li class="col-xs-4">
-        <div class="img-wrapper">
-          <img src="assets/images/slide10.jpg">
-          <div class="img-after"></div>
-        </div>
-        <div class="icon">
-          <i class="fa fa-heart-o"></i>
-        </div>
-        <div class="caption">
-          <span>$290,000</span>
-        </div>
-      </li>
-      <li class="col-xs-4">
-        <div class="img-wrapper">
-          <img src="assets/images/slide09.jpg">
-          <div class="img-after"></div>
-        </div>
-        <div class="icon">
-          <i class="fa fa-heart-o"></i>
-        </div>
-        <div class="caption">
-          <span>$90,000</span>
-        </div>
-      </li>
-    </ul>
-  </div>
-</div>
-
 
 
 <!-- ========== -->  
@@ -648,6 +651,17 @@ style="display: none">
  -->
 
 
+<div class="partners">
+
+  <ul>
+    <li class="partner partner01"><img src="assets/images/partner01.jpg"></li>
+    <li class="partner partner02"><img src="assets/images/partner02.jpg"></li>
+    <li class="partner partner03"><img src="assets/images/partner03.jpg"></li>
+    <li class="partner partner04"><img src="assets/images/partner04.jpg"></li>
+  </ul>
+
+</div>
+
 <!-- ============= -->  
 <!-- START: FOOTER -->
 <!-- ============= -->  
@@ -656,25 +670,25 @@ style="display: none">
   <div class="footer-top">
     <ul class="footer-ul">
       <li class="footer-li">
-        <a href="#"> Home </a>
+        <a class="smoothScroll" href="#"> Home </a>
       </li>
       <li class="footer-li">
-        <a href="#slides"> Pools </a>
+        <a class="smoothScroll" href="#featured-categories"> Pools </a>
       </li>
       <li class="footer-li">
-        <a href="#reviews"> Reviews </a>
+        <a class="smoothScroll" href="#reviews"> Testimonials </a>
       </li>
       <li class="footer-li">
-        <a href="#slides"> Portfolio </a>
+        <a class="smoothScroll" href="#featured-categories"> Projects </a>
       </li>
       <li class="footer-li">
-        <a href="#resources"> Learn </a>
+        <a class="smoothScroll" href="#resources2"> Resources </a>
       </li>
       <li class="footer-li">
-        <a href="#footer"> About Us </a>
+        <a class="smoothScroll" href="#resources"> About Us </a>
       </li>
       <li class="footer-li">
-        <a href="#open-modal"> Login </a>
+        <a href="#open-modal"> Get a Quote </a>
       </li>
     </ul>
   </div>
@@ -693,7 +707,41 @@ style="display: none">
     </div>
   </div>
 </div><!-- #footer -->
+<div class="modal" id="modal" style="display: none">
+  <!-- create partial form.html -->
+  <form>
+    <input placeholder="Your Name">
+    <input placeholder="Email Address">
+    <input placeholder="Phone Number">
+  </form>
+</div>
 
+<!-- ==================================== -->
+<!-- =========== START: MODAL =========== -->
+<!-- ==================================== -->
+
+<!-- vvv====vvv -->
+<!-- OPEN-MODAL -->
+<!-- ===vvvv=== -->
+<div class="modal-dialog" id="open-modal">
+  <div class="modal-content">
+    <header class="modal-header ct">
+      <a class="modal-close" data-dismiss="modal" aria-hidden="true" href="#"><span class="hidden">Close</span></a>
+      <br><br>
+      <h4 class="modal-title ct"> Get ready for summer!</h4>
+      <p> Enter your information below to get <em>10 Tips to a Perfect Pool</em> </p>
+    </header>
+
+    <div class="modal-body ct">
+      <form action="#" id="subForm" method="post">
+        <input id="fieldName" name="cm-name" type="text" placeholder="Your Name" required="">
+        <input id="fieldEmail" name="cm-krkyju-krkyju" type="email" placeholder="Email Address" required="">
+        <button class="button-add button-pink wide" type="submit">Download Now </button>
+        <p>No spam. Unsubscribe any time.</p>
+      </form>
+    </div>
+  </div>
+</div>
 
 </div><!-- .main -->
 

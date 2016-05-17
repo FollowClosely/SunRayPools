@@ -4,7 +4,7 @@ $( function() {
 			hero2    = 'hero02.jpg',
 			hero3    = 'hero03.jpg',
 			hero4    = 'hero04.jpg',
-			header1  = 'It\'s Summertime.',
+			header1  = 'It’s Summertime.',
 			header2  = 'Get Wet.',
 			header3  = 'Fire & Water.',
 			header4  = 'Outdoor Living.',			
@@ -45,7 +45,7 @@ $( function() {
 
 		$('.hero').attr('style',
 			'background: url(' + imgDir + hero2 + 
-			'); background-size: cover; background-position: center center; transition: all 0.4s ease;');	
+			'); background-size: cover; background-position: center top; transition: all 0.4s ease;');	
 		$('#hero-header').replaceWith('<h1 id="hero-header">' + header2 + '</h1>');
 		$('#banner-a').replaceWith('<span id="banner-a" class="bold hidden-on-mobile">' + banner2a + '</span>');
 		$('#banner-b').replaceWith('<span id="banner-b" class="bold">' + banner2b + '</span>');
@@ -121,6 +121,27 @@ $( function() {
 	});
 
 	
+  $('.smoothScroll').click(function() {
+    if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
+      var target = $(this.hash);
+      target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+      if (target.length) {
+        $('html,body').animate({
+          scrollTop: target.offset().top 
+        }, 600); // The number here represents the speed of the scroll in milliseconds
+        return false;
+      }
+    }
+  });
+
+	$(window).scroll(function() {
+	  var sticky = $('.sticky'),
+	    scroll = $(window).scrollTop();
+
+	  if (scroll >= 440) sticky.addClass('fixed');
+	  else sticky.removeClass('fixed');
+	});
+
 
 	/**
 	 * Main menu.

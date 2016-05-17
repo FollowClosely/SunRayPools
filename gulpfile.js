@@ -16,7 +16,7 @@ var config = {
 	sourceDir: './app/',
 	buildDir: './build/',
 	scripts: {
-		src: 'app/assets/js/**/*.js',
+		src: 'app/assets/js/**/*',
 		dest: 'build/assets/js'
 	},
 	styles: {
