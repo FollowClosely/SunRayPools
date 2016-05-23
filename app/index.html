@@ -9,21 +9,9 @@
   <!-- Mobile Specific Meta -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <script src="./assets/lib/angular/angular.min.js"></script>
-
-  <!-- app config -->
-  <script src="./assets/js/app.js"></script>
-
-  <!-- controllers -->
-  <script src="./assets/js/controllers/MainController.js"></script>  
-
-  <!-- directives -->
-  <script src="./assets/js/directives/reviews.js"></script>
-  <script src="./assets/js/directives/resources.js"></script>  
-  <script src="./assets/js/directives/products.js"></script>  
-
   <link rel="stylesheet" href="./assets/lib/bootstrap/css/bootstrap.css">
   <link rel="stylesheet" href="./assets/lib/font-awesome/font-awesome.min.css">
+  <link rel="stylesheet" href="./assets/lib/fancybox/jquery.fancybox.css?v=2.1.5">
   <link rel="stylesheet" href="./assets/css/main.css">
 
 </head>
@@ -51,7 +39,7 @@
     <div class="nav-map-wrapper sm-hide">
       <ul class="nav-map-ul">
         <li class="nav-map-li">
-          <a class="smoothScroll" href="#"> Home </a>
+          <a class="" href="#"> Home </a>
         </li>
         <li class="nav-map-li">
           <a class="smoothScroll" href="#resources"> About </a>
@@ -91,7 +79,7 @@
 
   <div id="nav-mobile" class="nav-sm-only collapsed">
     <ul class="nav-mobile-ul">
-      <a class="smoothScroll" href="#">
+      <a class="" href="#">
         <li class="nav-mobile-li">
           Home
         </li>
@@ -113,22 +101,7 @@
       </a>
     </ul>
   </div>
-
 </div>
-
-
-<!-- ======================================= -->  
-<!-- ========== START: NAV-MOBILE ========== -->
-<!-- ======================================= -->  
-<!-- <div class="nav-mobile row" id="nav-mobile"
-style="display: none">
-  <ul>
-    <li>Link A</li>
-    <li>Link B</li>
-    <li>Link C</li>
-  <button class="menu-toggle"> Menu </button>
-</div> -->
-
 
 
 <div class="hero-banner-wrapper">
@@ -177,39 +150,38 @@ style="display: none">
     </div>
   </div>
 
-
 <!--=======================================-->  
 </div><!-- .hero-banner-wrapper ===========-->
 <!--=======================================-->  
 
 <section id="featured-categories">
   <div class="featured-category" style="background-image: url(assets/images/slide07.jpg)">
-    <a href="#" class="fa fa-star-o">
+    <a href="assets/images/slide07.jpg" class="fa fa-star-o fancybox" rel="group">
       <h2> Residential Pools </h2>
     </a>
   </div>
   <div class="featured-category" style="background-image: url(assets/images/slide02.jpg)">
-    <a href="#" class="fa fa-lightbulb-o">
+    <a href="assets/images/slide02.jpg" class="fa fa-lightbulb-o fancybox" rel="group">
       <h2> Waterfalls </h2>
     </a>
   </div>
   <div class="featured-category" style="background-image: url(assets/images/slide08.jpg)">
-    <a href="#" class="fa fa-home">
+    <a href="assets/images/slide08.jpg" class="fa fa-home fancybox" rel="group">
       <h2> Spas </h2>
     </a>
   </div>
   <div class="featured-category" style="background-image: url(assets/images/slide02.jpg)">
-    <a href="#" class="fa fa-wrench">
+    <a href="assets/images/slide02.jpg" class="fa fa-wrench fancybox" rel="group">
       <h2> Outdoor Kitchens </h2>
     </a>
   </div>
   <div class="featured-category" style="background-image: url(assets/images/slide04.jpg)">
-    <a href="#" class="fa fa-signal">
+    <a href="assets/images/slide04.jpg" class="fa fa-signal fancybox" rel="group">
       <h2> Patios </h2>
     </a>
   </div>
   <div class="featured-category" style="background-image: url(assets/images/slide05.jpg)">
-    <a href="#" class="fa fa-newspaper-o">
+    <a href="assets/images/slide05.jpg" class="fa fa-newspaper-o fancybox" rel="group">
       <h2> Decks </h2>
     </a>
   </div>
@@ -217,21 +189,23 @@ style="display: none">
 
 <section id="featured-posts">
   <div class="featured-post" style="background-image: url(assets/images/slide14.jpg)">
-    <a href="#">
+    <a class="fancybox"  href="assets/images/slide14.jpg" rel="group">
       <h2 class="meta-type story-type"> Arbors, Pergolas &amp; Cabanas </h2>
       <div class="post-meta">
         <span> Diane Arthur on 16 May 2016 </span>
       </div>
     </a>
-  </div>  <div class="featured-post" style="background-image: url(assets/images/slide06.jpg)">
-    <a href="#">
+  </div>
+  <div class="featured-post" style="background-image: url(assets/images/slide06.jpg)">
+    <a class="fancybox"  href="assets/images/slide06.jpg" rel="group">
       <h2 class="meta-type gallery-type"> Decks, Patios &amp; Hardscapes </h2>
       <div class="post-meta">
         <span> Bob Arthur on 13 May 2016 </span>
       </div>
     </a>
-  </div>  <div class="featured-post" style="background-image: url(assets/images/slide09.jpg)">
-    <a href="#">
+  </div>
+  <div class="featured-post" style="background-image: url(assets/images/slide09.jpg)">
+    <a class="fancybox" href="assets/images/slide09.jpg" rel="group">
       <h2 class="meta-type gallery-type"> Fireplaces &amp; Firepits </h2>
       <div class="post-meta">
         <span> Diane Arthur on 13 May 2016 </span>
@@ -425,9 +399,9 @@ style="display: none">
 <div class="clearfix"></div>
 
 
-<!-- ==================================== -->  
-<!-- ======= REVIEWS & HEADSHOTS ======== -->  
-<!-- ==================================== -->  
+<!-- ========================================== -->  
+<!-- ======= TEST::REVIEWS & HEADSHOTS ======== -->  
+<!-- ========================================== -->  
 <div class="reviews-headshots-wrapper">
 
   <!-- ========================= -->  
@@ -444,33 +418,29 @@ style="display: none">
     </div>
   </div>
 
-  <!-- ====================== -->
-  <!-- ===== START: HEADSHOTS -->  
-  <div class="headshots-wrapper">
-    <div class="headshots">
-      <ul class="hs-ul">
-        <li class="hs-li active" id="headshot01">
-          <div class="headshot">
+  <!-- =================== -->
+  <!-- ===== START: QUOTES -->  
+  <div class="quotes-wrapper" style="margin-top: -50px">
+    <div class="quotes">
+      <ul class="quo-ul">
+        <li class="quo-li active" id="quote01">
+          <div class="quote">
             <span><a><img src="assets/images/headshot01.jpg"></a></span>
           </div>
-        </li>
-        <li class="hs-li" id="headshot02">
-          <div class="headshot">
+        </li><li class="quo-li" id="quote02">
+          <div class="quote">
             <span><a><img src="assets/images/headshot02.jpg"></a></span>
           </div>
-        </li>
-        <li class="hs-li" id="headshot03">
-          <div class="headshot">
+        </li><li class="quo-li" id="quote03">
+          <div class="quote">
             <span><a><img src="assets/images/headshot03.jpg"></a></span>
           </div>
-        </li>
-        <li class="hs-li" id="headshot04">
-          <div class="headshot">
+        </li><li class="quo-li" id="quote04">
+          <div class="quote">
             <span><a><img src="assets/images/headshot04.jpg"></a></span>
           </div>
-        </li>
-        <li class="hs-li" id="headshot05">
-          <div class="headshot">
+        </li><li class="quo-li" id="quote05">
+          <div class="quote">
             <span><a><img src="assets/images/headshot05.jpg"></a></span>
           </div>
         </li>
@@ -684,7 +654,6 @@ style="display: none">
     <li class="partner partner03"><img src="assets/images/partner03.jpg"></li>
     <li class="partner partner04"><img src="assets/images/partner04.jpg"></li>
   </ul>
-
 </div>
 
 <!-- ============= -->  
@@ -695,7 +664,7 @@ style="display: none">
   <div class="footer-top">
     <ul class="footer-ul">
       <li class="footer-li">
-        <a class="smoothScroll" href="#"> Home </a>
+        <a class="" href="#"> Home </a>
       </li>
       <li class="footer-li">
         <a class="smoothScroll" href="#featured-categories"> Pools </a>
@@ -758,10 +727,11 @@ style="display: none">
     </header>
 
     <div class="modal-body ct">
-      <form action="#" id="subForm" method="post">
+      <form action="http://followclosely2.createsend.com/t/d/s/kumn/" id="subForm" method="post">
         <input id="fieldName" name="cm-name" type="text" placeholder="Your Name" required="">
-        <input id="fieldEmail" name="cm-krkyju-krkyju" type="email" placeholder="Email Address" required="">
-        <button class="button-add button-pink wide" type="submit">Download Now </button>
+        <input id="fieldEmail" name="cm-kumn-kumn" type="email" placeholder="Email Address" required="">
+        <input id="fielddliduh" name="cm-f-dliduh" type="text" placeholder="Zip Code" required="">
+        <button class="button-add button-blue wide" type="submit">Download Now </button>
         <p>No spam. Unsubscribe any time.</p>
       </form>
     </div>
@@ -769,11 +739,11 @@ style="display: none">
 </div>
 
 
-
 </div><!-- .main -->
 
 <script src="assets/lib/jquery/jquery-1.12.3.js"></script>
 <script src="assets/lib/bootstrap/js/bootstrap.js"></script>
+<script src="./assets/lib/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
 <script src="assets/js/scripts.js"></script>
 
 </body>

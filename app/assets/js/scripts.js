@@ -79,7 +79,7 @@ $( function() {
 
 
 
-	$('#headshot01').on('click', function(){
+	$('#quote01').on('click', function(){
 		$('.review').attr('style',
 			'background: url(assets/images/reviewbg01.jpg); background-size: cover; background-position: center center; transition: all 0.4s ease;');
 		$('.quote p').replaceWith('<p>"Sun Ray Pools took great care of us."</p>');
@@ -87,35 +87,35 @@ $( function() {
 		"Bob &amp; Diane are wonderful to work with. I highly recommend them. A 5 star treatment!"
 	});
 
-	$('#headshot02').on('click', function(){
+	$('#quote02').on('click', function(){
 		$('.review').attr('style',
 			'background: url(assets/images/reviewbg02.jpg); background-size: cover; background-position: center center; transition: all 0.4s ease;');
 		$('.quote p').replaceWith('<p>"Another Good Review"</p>');
 		$('.quote h6').replaceWith('<h6>The Beach Boys</h6>');
 	});
 
-	$('#headshot03').on('click', function(){
+	$('#quote03').on('click', function(){
 		$('.review').attr('style',
 			'background: url(assets/images/reviewbg03.jpg); background-size: cover; background-position: center center; transition: all 0.4s ease;');
 		$('.quote p').replaceWith('<p>"A+"</p>');
 		$('.quote h6').replaceWith('<h6>The Carpenters</h6>');
 	});
 
-	$('#headshot04').on('click', function(){
+	$('#quote04').on('click', function(){
 		$('.review').attr('style',
 			'background: url(assets/images/reviewbg04.jpg); background-size: cover; background-position: center center; transition: all 0.4s ease;');
 		$('.quote p').replaceWith('<p>"And more reviews!"</p>');
 		$('.quote h6').replaceWith('<h6>Jen Sale</h6>');
 	});
 
-	$('#headshot05').on('click', function(){
+	$('#quote05').on('click', function(){
 		$('.review').attr('style',
 			'background: url(assets/images/reviewbg05.jpg); background-size: cover; background-position: center center; transition: all 0.4s ease;');
 		$('.quote p').replaceWith('<p>"Last featured testimonial."</p>');
 		$('.quote h6').replaceWith('<h6>Declan Taintor</h6>');
 	});
 
-	$('.hs-li').on('click', function(){
+	$('.quo-li').on('click', function(){
 		$('li.active').removeClass('active');
 		$(this).addClass('active');
 	});
@@ -145,13 +145,12 @@ $( function() {
   $('.mobile-menu').click(function(){
     if ($('#nav-mobile').hasClass('collapsed')) {
       $('#nav-mobile').removeClass('collapsed');
-      // $('body').addClass('modal-mask');
     } else {
       $('#nav-mobile').addClass('collapsed');
-      // $('body').removeClass('modal-mask');
     }
   });
 
 
+  $('.fancybox').fancybox();
 
 } );
