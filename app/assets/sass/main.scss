@@ -1,5 +1,6 @@
 @import 'partials/fonts';
 @import 'partials/var';
+@import 'partials/landing';
 
 @media screen and (max-width: 640px) {
 	.xs-hide {
@@ -454,22 +455,26 @@ input {
 .nav {
 	margin: 0;
   height: 50px;
-  padding: 0 calc((100% - 1240px) / 2);
   position: relative;
   border-bottom: 1px solid #ccc;
-} 
+  box-shadow: 0 1px 4px rgba(0,0,0,0.15);
+}
 
 .nav-logo-wrapper, .nav-ghost-wrapper, .nav-map-wrapper, .nav-social-wrapper {
-	// flex: 1;
+	
 }
 
 // nav-flex has 3 children
 .nav-flex {
 	display: flex;
+  padding: 0 calc((100% - 1240px) / 2);
+
 	// justify-content: space-around;
   height:50px;
 	background: #fff;
-  border-bottom: 1px solid #ccc;
+	// border-bottom:1px solid #ccc;
+ //  box-shadow: 0 1px 4px rgba(0,0,0,0.15);
+  z-index:1000;
 }
 // nested flexbox 1 //
 .nav-logo-wrapper {
@@ -483,12 +488,12 @@ input {
 // nested flexbox 2 //
 .nav-map-wrapper {
 	margin: 0;
-	padding: 0;
+	padding: 0 0 0 1em;
 	display: flex;
 	align-items: center;
 	flex: 1 100%;
-
 }
+
 // nested flexbox 3 //
 .nav-social-wrapper {
 	margin: 0;
@@ -1020,7 +1025,7 @@ a {
   display: block;
   padding: 20px 10px;
   width: 100%;
-  height: 100%;
+  // height: 100%;
 }
 .featured-post * {
   position: relative;
@@ -1088,7 +1093,6 @@ a {
 @media (max-width: 767px) {
 .featured-post:nth-child(3n) {
     width: 100%;
-    height: auto;
 	}
 }
 @media (max-width: 767px) {
@@ -1145,7 +1149,7 @@ a {
 .mobile-menu {
 	background: none;
 	border: none;
-	padding: 0 15px;
+	padding: 0 20px;
 	margin: 0;
 }
 

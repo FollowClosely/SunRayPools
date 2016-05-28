@@ -132,6 +132,7 @@ gulp.task('watch', [
 		gulp.watch(config.styles.src, ['styles']);
 		gulp.watch(config.scripts.src, ['scripts']);
 		gulp.watch(config.html.src, ['html']);
+		gulp.watch(config.views.src, ['templates']);
 		gulp.watch(config.fonts.src, ['fonts']);
 		gulp.watch(config.lib.src, ['lib']);
 		gulp.watch(config.images.src, ['images']);

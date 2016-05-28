@@ -1,336 +1,112 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
   <meta charset="utf-8">
-  <title>Sun Ray Pools</title>
   <base href="/">
-
-  <!-- Mobile Specific Meta -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="assets/lib/bootstrap/css/bootstrap.css">
+  <link rel="stylesheet" href="assets/lib/font-awesome/font-awesome.min.css">
+  <link rel="stylesheet" href="assets/lib/fancybox/jquery.fancybox.css?v=2.1.5">
+  <link rel="stylesheet" href="assets/css/main.css">
 
-  <link rel="stylesheet" href="./assets/lib/bootstrap/css/bootstrap.css">
-  <link rel="stylesheet" href="./assets/lib/font-awesome/font-awesome.min.css">
-  <link rel="stylesheet" href="./assets/lib/fancybox/jquery.fancybox.css?v=2.1.5">
-  <link rel="stylesheet" href="./assets/css/main.css">
+  <script src="assets/lib/handlebars/handlebars.runtime.min.js"></script>  
+  <script src="partials/App.js"></script>
+  <script src="partials/Hero.js"></script>
+  <script src="partials/Banner.js"></script>
+  <script src="partials/Featured.js"></script>
+  <script src="partials/Resources.js"></script>
 
-
-<script src="assets/lib/jquery/jquery-1.12.3.js"></script>
-<script src="assets/lib/bootstrap/js/bootstrap.js"></script>
-<script src="./assets/lib/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
-<script src="assets/lib/skycons/skycons.js"></script>
-<script src="../assets/lib/handlebars/handlebars.runtime.min.js"></script>
-<script src="./partials/Nav.js"></script>
-<script src="assets/js/scripts.js"></script>
-
-<script>
-  document.querySelector('#navDiv').innerHTML = MyApp.templates.Nav();
-</script>
-
-
+  <script src="assets/lib/jquery/jquery-1.12.3.js"></script>
+  <script src="assets/lib/bootstrap/js/bootstrap.js"></script>
+  <script src="assets/lib/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+  <script src="assets/lib/skycons/skycons.js"></script>
+  <script src="assets/js/scripts.js"></script>
+  <title> Sun Ray Pools | Home </title>
 </head>
 <body>
 
-<div class="main">
-
-<!-- template: Nav.js -->
-<div id="navDiv"></div>
-
-
-
-<div class="hero-banner-wrapper">
-<!-- ======================================== --> 
-<!-- ============== START: HERO ============= -->
-<!-- ======================================== -->
-  <div class="hero ct" id="hero" style="background: url(assets/images/hero01.jpg); background-size: cover; background-position: center center;">
-    <div class="hero-cta">
-      <div class="hero-cta-h1">
-        <h1 id="hero-header">It’s Summertime.</h1>
-      </div>
-      <div class="hero-cta-ul">
-        <ul id="hero-ul">
-          <a class="active" id="hero01" href="#"><li> Pools </li></a>
-          <a id="hero02" href="#"><li> Spas </li></a>
-          <a id="hero03" href="#"><li> Firepits </li></a>
-          <a id="hero04" href="#"><li> Patio </li></a>
-        </ul>
-      </div>
-      <div class="hero-cta-btn">
-        <form>
-          <input placeholder="Enter your email address...">
-        </form>
-        <div class="hero-cta-btn-submit">
-          <button type="submit"> Submit </button>
-        </div>
+<div id="nav" class="nav sticky">
+  <div class="nav-flex" id="nav-top" role="navigation">  
+    <div class="nav-logo-wrapper">
+      <div id="logo" class="nav-logo-top">
+        <a href="#" class="logo" style="margin-bottom:-50px">
+          <img src="assets/images/logo.png">
+        </a>
       </div>
     </div>
-  </div>
-
-<!-- ===================================== -->
-<!-- =========== START: BANNER =========== -->
-<!-- ===================================== -->
-  <div class="banner" id="banner">
-    <div class="banner-wrapper">
-      <a href="#open-modal"><img src="assets/images/icon02.png"></a>
-      <p class="flex-1">
-        <span id="banner-a" class="bold hidden-on-mobile">
-          Download the Checklist &nbsp;&rarr;
-        </span>
-        <span id="banner-b" class="bold">
-          10 Tips for a Perfect Pool
-        </span>
-      </p>
-      <a href="#open-modal" style="color:white"><button class="btn btn-main"> Download</button></a>
+    <div class="nav-ghost-wrapper"></div>
+    <div class="nav-map-wrapper sm-hide">
+      <ul class="nav-map-ul">
+        <li class="nav-map-li">
+          <a class="" href="#"> Home </a>
+        </li>
+        <li class="nav-map-li">
+          <a class="smoothScroll" href="#resources"> About </a>
+        </li>
+        <li class="nav-map-li">
+          <a class="smoothScroll" href="#reviews"> Reviews </a>
+        </li>
+        <li class="nav-map-li">
+          <a class="smoothScroll" href="#featured-categories"> Portfolio </a>
+        </li>
+        <li class="nav-map-li">
+          <a href="#open-modal"> Contact </a>
+        </li>
+      </ul>
     </div>
-  </div>
-
-<!--=======================================-->  
-</div><!-- .hero-banner-wrapper ===========-->
-<!--=======================================-->  
-
-<section id="featured-categories">
-  <div class="featured-category" style="background-image: url(assets/images/slide07.jpg)">
-    <a href="assets/images/slide07.jpg" class="fa fa-star-o fancybox" rel="group">
-      <h2> Residential Pools </h2>
-    </a>
-  </div>
-  <div class="featured-category" style="background-image: url(assets/images/slide02.jpg)">
-    <a href="assets/images/slide02.jpg" class="fa fa-lightbulb-o fancybox" rel="group">
-      <h2> Waterfalls </h2>
-    </a>
-  </div>
-  <div class="featured-category" style="background-image: url(assets/images/slide08.jpg)">
-    <a href="assets/images/slide08.jpg" class="fa fa-home fancybox" rel="group">
-      <h2> Spas </h2>
-    </a>
-  </div>
-  <div class="featured-category" style="background-image: url(assets/images/slide02.jpg)">
-    <a href="assets/images/slide02.jpg" class="fa fa-wrench fancybox" rel="group">
-      <h2> Outdoor Kitchens </h2>
-    </a>
-  </div>
-  <div class="featured-category" style="background-image: url(assets/images/slide04.jpg)">
-    <a href="assets/images/slide04.jpg" class="fa fa-signal fancybox" rel="group">
-      <h2> Patios </h2>
-    </a>
-  </div>
-  <div class="featured-category" style="background-image: url(assets/images/slide05.jpg)">
-    <a href="assets/images/slide05.jpg" class="fa fa-newspaper-o fancybox" rel="group">
-      <h2> Decks </h2>
-    </a>
-  </div>
-</section>
-
-<section id="featured-posts">
-  <div class="featured-post" style="background-image: url(assets/images/slide14.jpg)">
-    <a class="fancybox"  href="assets/images/slide14.jpg" rel="group">
-      <h2 class="meta-type story-type"> Arbors, Pergolas &amp; Cabanas </h2>
-      <div class="post-meta">
-        <span> Diane Arthur on 16 May 2016 </span>
+    <div class="nav-social-wrapper sm-hide">
+      <div class="nav-social-top">
+        <i class="fa fa-facebook-square"></i>
+        <i class="fa fa-twitter-square"></i>
+        <i class="fa fa-google-plus-square"></i>
+        <i class="fa fa-houzz"></i>
       </div>
-    </a>
-  </div>
-  <div class="featured-post" style="background-image: url(assets/images/slide06.jpg)">
-    <a class="fancybox"  href="assets/images/slide06.jpg" rel="group">
-      <h2 class="meta-type gallery-type"> Decks, Patios &amp; Hardscapes </h2>
-      <div class="post-meta">
-        <span> Bob Arthur on 13 May 2016 </span>
+      <div class="nav-weather-wrapper">
+        <canvas id="partly-cloudy-day" width="36" height="36">
+        </canvas>
+        <span>86&deg;</span>
       </div>
-    </a>
-  </div>
-  <div class="featured-post" style="background-image: url(assets/images/slide09.jpg)">
-    <a class="fancybox" href="assets/images/slide09.jpg" rel="group">
-      <h2 class="meta-type gallery-type"> Fireplaces &amp; Firepits </h2>
-      <div class="post-meta">
-        <span> Diane Arthur on 13 May 2016 </span>
-      </div>
-    </a>
-  </div>
-</section>
-<div class="clearfix"></div>
+    </div>
+    <div class="nav-sm-only">
+      <a>
+        <button type="button" class="mobile-menu"> 
+          <span class="hidden">Menu</span>
+        </button>
+      </a>
+    </div>
+  </div><!-- .nav-flex -->
 
 
-<!-- ===================================== -->  
-<!-- ========== START: RESOURCES ========= -->
-<!-- ===================================== -->  
-<div class="resources" id="resources">
-  <h2>Why Sun Ray Pools?</h2>
-  
-  <div class="resources-wrapper">
-    <!--=============================-->
-    <!-- MD/LG SCREENS ONLY (<768px) -->
-    <!--=============================-->
-    <ul class="sm-hide-ul">
-      <li class="sm-hide">
-        <section class="xs-hide sm-hide">
-          <div class="col-sm-4 col-sm-offset-0 col-xs-10 col-xs-offset-1">
-            <div class="resource">
-              <div class="img-wrapper">
-                <img src="assets/images/resource01.jpg" class="resource">
-                <div class="img-after"><h3 class="ct">
-                  About Us
-                </h3></div>
-              </div>
-              <div class="img-after"></div>
-              <div class="caption">
-                <p> Eros meis vidit ad usu, viris vivendo an sit, etiam oporteat quo te. Cu ius bonorum molestiae. Id mea wisi necessitatibus, at duo purto omnis. Hinc vivendo te vix. </p>
-                <p> Sonet ridens concludaturque vix ne. </p>
-                <a href="#open-modal"> Contact Us </a>
-              </div>
-            </div>
-          </div>
-        </section>
-      </li>
-    
-      <li class="xs-hide">
-        <section class="xs-hide sm-hide">
-          <div class="col-sm-4 col-sm-offset-0 col-xs-10 col-xs-offset-1">
-            <div class="resource">
-              <div class="img-wrapper">
-                <img src="assets/images/resource02.jpg" class="resource">
-                <div class="img-after"><h3 class="ct">
-                  Financing
-                </h3></div>
-              </div>
-              <div class="img-after"></div>
-              <div class="caption">
-                <p> Aeterno maiestatis pri an, idque ullum antiopam vel eu. Mucius accusata iracundia ea qui, ei est graecis adipiscing, eam eu. Diceret probatus eu ius, id vel nostro omnesque moderatius.  </p>
-                <p> Congue percipit has te. </p>
-                <a href="#open-modal"> Learn More </a>
-              </div>
-            </div>
-          </div>
-        </section>
-      </li>
-
-      <li class="xs-hide">
-        <section class="xs-hide sm-hide">
-          <div class="col-sm-4 col-sm-offset-0 col-xs-10 col-xs-offset-1">
-            <div class="resource">
-              <div class="img-wrapper">
-                <img src="assets/images/resource03.jpg" class="resource">
-                <div class="img-after"><h3 class="ct">
-                  FAQs
-                </h3></div>
-              </div>
-              <div class="img-after"></div>
-              <div class="caption">
-                <p> Lorem ipsum dolor sit amet, an mei velit minim denique. Ut quot mediocrem hendrerit duo, nibh tamquam docendi pro an. </p>
-                <p> That's Sun Ray Pools. </p>
-                <a href="#open-modal"> Get an Estimate </a>
-              </div>
-            </div>
-          </div>
-        </section>
-      </li>
+  <div id="nav-mobile" class="nav-sm-only collapsed">
+    <ul class="nav-mobile-ul">
+      <a class="" href="#">
+        <li class="nav-mobile-li">
+          Home
+        </li>
+      </a>
+      <a class="smoothScroll" href="#resources">
+        <li class="nav-mobile-li">
+          About
+        </li>
+      </a>
+      <a class="smoothScroll" href="#reviews">
+        <li class="nav-mobile-li">
+          Reviews 
+        </li>
+      </a>
+      <a class="smoothScroll" href="#featured-categories">
+        <li class="nav-mobile-li">
+          Portfolio
+        </li>
+      </a>
     </ul>
+  </div>
+</div>
+  <div class="hero-banner-wrapper">
+    <div id="heroDiv"></div>
+    <div id="bannerDiv"></div>    
+  </div>
 
-    <!--=============================-->
-    <!-- SM&XS SCREENS ONLY (<768px) -->
-    <!--=============================-->
-    <ul class="md-hide-ul">
-      <li class="md-hide li-sm">
-        <section class="sm-only">
-          <div class="resource-wrapper-sm">
-            <div class="resource-sm">
+  <div id="featuredDiv"></div>
 
-              <div class="img-wrapper-sm">
-                <img src="assets/images/resource01.jpg" class="resource">
-              </div>
-
-              <div class="img-banner-sm">
-                <div class="banner-h3-sm">
-                  <h3 class="ct">
-                    About Us
-                  </h3>
-                </div>
-              </div>
-
-              <div class="caption-sm">
-                <div class="caption-p-sm">
-                  <p> Eros meis vidit ad usu, viris vivendo an sit, etiam oporteat quo te. Cu ius bonorum molestiae. </p>
-                </div>
-
-                <div class="caption-a-sm">
-                  <a href="#open-modal"> Contact Us </a>
-                </div>
-
-              </div>
-            </div>
-          </div>
-        </section>
-      </li>
-      <div class="clearfix"></div>
-    
-      <li class="md-hide li-sm">
-        <section class="sm-only">
-          <div class="resource-wrapper-sm">
-            <div class="resource-sm">
-
-              <div class="img-wrapper-sm">
-                <img src="assets/images/resource02.jpg" class="resource">
-              </div>
-
-              <div class="img-banner-sm">
-                <div class="banner-h3-sm">
-                  <h3 class="ct">
-                    Financing
-                  </h3>
-                </div>
-              </div>
-
-              <div class="caption-sm">
-                <div class="caption-p-sm">
-                  <p> Aeterno maiestatis pri an, idque ullum antiopam vel eu. Mucius accusata. </p>
-                </div>
-
-                <div class="caption-a-sm">
-                  <a href="#open-modal">Learn More </a>
-                </div>
-
-              </div>
-            </div>
-          </div>
-        </section>
-      </li>
-      <div class="clearfix"></div>
-    
-      <li class="md-hide li-sm">
-        <section class="sm-only">
-          <div class="resource-wrapper-sm">
-            <div class="resource-sm">
-
-              <div class="img-wrapper-sm">
-                <img src="assets/images/resource03.jpg" class="resource">
-              </div>
-
-              <div class="img-banner-sm">
-                <div class="banner-h3-sm">
-                  <h3 class="ct">
-                    FAQs
-                  </h3>
-                </div>
-              </div>
-
-              <div class="caption-sm">
-                <div class="caption-p-sm">
-                  <p> Lorem ipsum dolor sit amet, an mei velit minim denique. </p>
-                </div>
-
-                <div class="caption-a-sm">
-                  <a href="#open-modal"> Get an Estimate </a>
-                </div>
-
-              </div>
-            </div>
-          </div>
-        </section>
-      </li>
-      <div class="clearfix"></div>
-    </ul>
-  </div><!-- .resources-wrapper -->
-</div><!-- #resources -->
-<div class="clearfix"></div>
+  <div id="resourcesDiv"></div>
 
 
 <!-- ========================================== -->  
@@ -675,13 +451,17 @@
 
 </div><!-- .main -->
 
-<script src="assets/lib/jquery/jquery-1.12.3.js"></script>
-<script src="assets/lib/bootstrap/js/bootstrap.js"></script>
-<script src="./assets/lib/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
-<script src="assets/lib/skycons/skycons.js"></script>
-<script src="../assets/lib/handlebars/handlebars.runtime.min.js"></script>
-<script src="./partials/Nav.js"></script>
-<script src="assets/js/scripts.js"></script>
+
+
+<script>
+  // template : App.hbs === navigation bar;
+  document.querySelector('#navDiv').innerHTML = MyApp.templates.App();
+  document.querySelector('#heroDiv').innerHTML = MyApp.templates.Hero();
+  document.querySelector('#bannerDiv').innerHTML = MyApp.templates.Banner();
+  document.querySelector('#featuredDiv').innerHTML = MyApp.templates.Featured();
+  document.querySelector('#resourcesDiv').innerHTML = MyApp.templates.Resources();
+</script>
+
 
 
 </body>
