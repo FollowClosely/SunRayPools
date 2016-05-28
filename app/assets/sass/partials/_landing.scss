@@ -1,3 +1,15 @@
+.btn-green{
+	background: #74c005;
+  color: #fff;
+  &:hover {
+  	background-color: #5d9900;
+    background: -webkit-linear-gradient(bottom,#74c005,#5d9900);
+    background: linear-gradient(to top,#74c005,#5d9900);
+    background-repeat: repeat-x;
+    color: #fff;
+  }
+}
+
 .landingBG{
 	max-width: 1240px;
 	margin: 0 auto;
@@ -12,11 +24,10 @@
 .trapezoid{
 	font-family:$sans;
 	height: auto;
-	padding-left:20px;
 	position:absolute;
 	left:10;
-	// bottom: 250px;
-	padding: 0 30px 0 10px;
+	padding: 13px 30px 0 20px;
+	margin-top:135px;
 	margin-bottom:0;
 	margin-right:1em;
 	background-color: rgba(27,80,152,.9);
@@ -36,7 +47,6 @@
     border-right-color: rgba(51,51,51,.9);
 	}	&:after{
     border-left-color: rgba(27,80,152,.9);
-    border-left-color: rgba(51,51,51,.9);
 		border-top-style: solid;
     border-left-width: 1em;
     border-left-style: solid;
@@ -46,27 +56,38 @@
 }
 
 div.trapezoid-wrapper {
-	height: 100%;
-	width: 100%;
-	display: relative;
+	margin-bottom:200px;
 }
-// @media screen and (max-width: 1024px){
-	.landing-overlay {
-		position:absolute;
-    height: 350px;
-    top: 170px;
-		padding: 20px;
-	  text-align: left;
-	  background-color: rgba(0,116,228,.9);
-	  // top: 270px;
-	  // height: 250px;
+.landing-overlay {
+	// position:absolute;
+  height: 250px;
+	padding: 20px;
+  text-align: left;
+  background-color: rgba(0,116,228,.9);
+	width:100%;
+	max-width:1200px;
+}
+
+
+div.overlay-content{
+	position: relative;
+}
+
+div.overlay-form{
+	margin: 0;
+	padding-top: 20px;
+	width: 66.6667%;
+	border-right: 1px solid #fff;
+	h1 {
+		font-family: $sans;
+		margin: 0;
+		padding:0;
+	} p {
+		font-size: 18px;
+		margin: 10px auto;
+		font-family: $sans;
 	}
-// }
-
-
-div.overlayContent{}
-
-
+}
 @media screen and (min-width:767px) {
 	div.nav-sub-wrapper {
 		left:0;
@@ -116,5 +137,93 @@ li.sub-nav-item {
 	}
 }
 
+div.landing-details{
+	color: $darkGrey;
+  font-size: 15px;
+	font-family: $sansBold;
+  line-height: 1.5;
+  text-transform: none;
+  background-color: #e2effc;
+  padding: 7px 20px 10px;
+  text-align: center;
+  a {
+  	margin-left:100px;
+  } a:hover {
+  	color: $blueDark;
+  }
+}
+div.sub-detail{
 
+}
 
+.landing-form{
+	margin-top: 10px;
+	input{
+		height:40px;
+		padding-left:5px;
+	}
+}
+input#landing-name{
+	width:450px;
+	margin-right:6px;
+	margin-bottom:15px;
+}
+input#landing-email{
+	width: 400px;
+	margin-right: 6px;
+	margin-bottom:10px;
+}
+input#landing-zip{
+	width: 150px;
+	margin-bottom:15px;
+}
+
+button.landing-button{
+	height: 40px;
+	background: #74c005;
+  color: #fff;
+	border: 1px solid transparent;
+  border-radius: 5px;
+  cursor: pointer;
+  display: inline-block;
+  padding: .4em .67em;
+  text-align: center;
+  white-space: normal;
+	width: 200px;
+  line-height: 1.5;
+}
+.landing-contact-us{
+	position:absolute;
+	right:0;
+	top:25%;
+	padding: 0 5%;
+	width: 33.3%;
+	text-align: center;
+	p.questions{
+		font-size: 1.5em;
+	} p.alt-question {
+		margin-top: .8em;
+		font-size:13px;
+	}
+}
+
+div.contact-us-btn{
+	padding: 0 10%;
+	height: 40px;
+
+	& button.contact-btn {
+		height: 40px;
+		line-height: 1.85em;
+		color: #fff;
+		border: 1px solid transparent;
+    border-radius: 5px;
+    cursor: pointer;
+    display: inline-block;
+    padding: .4em .75em;
+    text-align: center;
+    white-space: normal;
+    width: 100%;
+    line-height: 1.5;
+
+	}
+}
