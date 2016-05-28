@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Handlebars Test</title>
+  <script src="../assets/lib/handlebars/handlebars.runtime.min.js"></script>
+  <script src="./partials/App.js"></script>
+</head>
+<body>
+  <div id="app"></div>
+  <script>
+    // template : App.hbs (navigation bar)
+    document.querySelector('#app').innerHTML = MyApp.templates.App();
+  </script>
+</body>
+</html>

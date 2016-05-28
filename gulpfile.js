@@ -8,6 +8,10 @@ var gulp        = require('gulp'),
 		rename      = require('gulp-rename'),
 		sass        = require('gulp-sass'),
 		gutil       = require('gulp-util'),
+		handlebars  = require('gulp-handlebars'),
+		wrap        = require('gulp-wrap'),
+		declare     = require('gulp-declare'),
+		concat      = require('gulp-concat'),
 		reload      = browserSync.reload;
 
 var config = {
@@ -24,10 +28,12 @@ var config = {
 		dest: 'build/assets/css'
 	},
 	html: {
-		src: 'app/index.html',
-		dest: 'build/',
-		viewsSrc: 'app/views/**/*.html',
-		viewsDest: 'build/views/'
+		src: ['app/index.html', 'app/views/**/*.html'],
+		dest: 'build/'
+	},
+	views: {
+		src: 'app/views/**/*.hbs',
+		dest: 'build/'
 	},
 	lib: {
 		src: 'app/assets/lib/**/*',
@@ -71,6 +77,36 @@ gulp.task('html', function(){
 		.pipe(reload({stream: true}));
 });
 
+// gulp.task('templates', function(){
+// 	return gulp
+// 		.src(config.views.src)
+// 		.pipe(handlebars({
+// 			handlebars: require('handlebars')
+// 		}))
+//     .pipe(wrap('Handlebars.template(<%= contents %>)'))
+// 		.pipe(declare({
+// 			namespace: 'MyApp.templates',
+// 			noRedeclare: true
+// 		}))
+// 		// .pipe(concat('templates.js'))
+// 		.pipe(gulp.dest(config.views.dest))
+// });
+
+gulp.task('templates', function(){
+  gulp.src(config.views.src)
+    .pipe(handlebars({
+      handlebars: require('handlebars')
+    }))
+    .pipe(wrap('Handlebars.template(<%= contents %>)'))
+    .pipe(declare({
+      namespace: 'MyApp.templates',
+      noRedeclare: true
+    }))
+    // .pipe(concat('templates.js'))
+    .pipe(gulp.dest(config.views.dest));
+});
+
+
 gulp.task('fonts', function(){
 	return gulp.src(config.fonts.src)
 		.pipe(gulp.dest(config.fonts.dest))
@@ -90,7 +126,7 @@ gulp.task('images', function() {
 });
 
 gulp.task('watch', [
-	'styles', 'scripts', 'html', 'fonts', 'lib', 'images'
+	'styles', 'scripts', 'html', 'templates', 'fonts', 'lib', 'images'
 ],
 	function() {
 		gulp.watch(config.styles.src, ['styles']);

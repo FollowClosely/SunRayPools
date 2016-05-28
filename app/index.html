@@ -14,94 +14,28 @@
   <link rel="stylesheet" href="./assets/lib/fancybox/jquery.fancybox.css?v=2.1.5">
   <link rel="stylesheet" href="./assets/css/main.css">
 
+
+<script src="assets/lib/jquery/jquery-1.12.3.js"></script>
+<script src="assets/lib/bootstrap/js/bootstrap.js"></script>
+<script src="./assets/lib/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<script src="assets/lib/skycons/skycons.js"></script>
+<script src="../assets/lib/handlebars/handlebars.runtime.min.js"></script>
+<script src="./partials/Nav.js"></script>
+<script src="assets/js/scripts.js"></script>
+
+<script>
+  document.querySelector('#navDiv').innerHTML = MyApp.templates.Nav();
+</script>
+
+
 </head>
 <body>
 
 <div class="main">
 
-<!-- ================================ -->  
-<!-- ========== START: NAV ========== -->
-<!-- ================================ -->  
-<div id="nav" class="nav sticky">
+<!-- template: Nav.js -->
+<div id="navDiv"></div>
 
-  <div class="nav-flex" id="nav-top" role="navigation">  
-
-    <div class="nav-logo-wrapper">
-      <div id="logo" class="nav-logo-top">
-        <a href="#" class="logo" style="margin-bottom:-50px">
-          <img src="assets/images/logo.png">
-        </a>
-      </div>
-    </div>
-
-    <div class="nav-ghost-wrapper"></div>
-
-    <div class="nav-map-wrapper sm-hide">
-      <ul class="nav-map-ul">
-        <li class="nav-map-li">
-          <a class="" href="#"> Home </a>
-        </li>
-        <li class="nav-map-li">
-          <a class="smoothScroll" href="#resources"> About </a>
-        </li>
-        <li class="nav-map-li">
-          <a class="smoothScroll" href="#reviews"> Reviews </a>
-        </li>
-        <li class="nav-map-li">
-          <a class="smoothScroll" href="#featured-categories"> Portfolio </a>
-        </li>
-        <li class="nav-map-li">
-          <a href="#open-modal"> Contact </a>
-        </li>
-      </ul>
-    </div>
-
-    <div class="nav-social-wrapper sm-hide">
-      <div class="nav-social-top">
-        <i class="fa fa-facebook-square"></i>
-        <i class="fa fa-twitter-square"></i>
-        <i class="fa fa-google-plus-square"></i>
-        <i class="fa fa-houzz"></i>
-      </div>
-    </div>
-
-    <div class="nav-sm-only">
-      <a>
-        <!-- <button type="button" class="mobile-menu collapsed" data-toggle="collapse" data-target=".navbar-collapse">
-         -->
-        <button type="button" class="mobile-menu"> 
-          <span class="hidden">Menu</span>
-        </button>
-      </a>
-    </div>
-
-  </div><!-- .nav-flex -->
-
-  <div id="nav-mobile" class="nav-sm-only collapsed">
-    <ul class="nav-mobile-ul">
-      <a class="" href="#">
-        <li class="nav-mobile-li">
-          Home
-        </li>
-      </a>
-      <a class="smoothScroll" href="#resources">
-        <li class="nav-mobile-li">
-          About
-        </li>
-      </a>
-      <a class="smoothScroll" href="#reviews">
-        <li class="nav-mobile-li">
-          Reviews 
-        </li>
-      </a>
-      <a class="smoothScroll" href="#featured-categories">
-        <li class="nav-mobile-li">
-          Portfolio
-        </li>
-      </a>
-    </ul>
-  </div>
-</div>
 
 
 <div class="hero-banner-wrapper">
@@ -744,7 +678,11 @@
 <script src="assets/lib/jquery/jquery-1.12.3.js"></script>
 <script src="assets/lib/bootstrap/js/bootstrap.js"></script>
 <script src="./assets/lib/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<script src="assets/lib/skycons/skycons.js"></script>
+<script src="../assets/lib/handlebars/handlebars.runtime.min.js"></script>
+<script src="./partials/Nav.js"></script>
 <script src="assets/js/scripts.js"></script>
+
 
 </body>
 </html>

@@ -1,0 +1,20 @@
+{
+  "name": "s",
+  "description": "for http://sunraypoolstx.com",
+  "main": "",
+  "authors": [
+    "Andrew Jarrett"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/FollowClosely/SunRayPools",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "handlebars": "^4.0.5"
+  }
+}

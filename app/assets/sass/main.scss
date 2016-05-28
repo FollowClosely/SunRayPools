@@ -503,6 +503,24 @@ input {
 	display: flex;
 	flex: 1 25%;
 }
+// nested flexbox 5 //
+.nav-weather-wrapper {
+	display: flex;
+	align-items: center;
+	canvas {
+		margin: 0;
+		margin-left: .5rem;
+	}
+	span {
+		color: #0074e4;
+		font-family: $serifBold;
+		font-size: 1.6em;
+		line-height: 1.6;
+		margin-left: .4rem;
+		margin-right: 2rem;
+	}
+}
+
 @media screen and (min-width: 768px) {
 	.nav-ghost-wrapper {
 		flex: 1 18%;

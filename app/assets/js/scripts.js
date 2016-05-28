@@ -22,6 +22,7 @@ $( function() {
 			quote4   = 'reviewbg04.jpg',
 			quote5   = 'reviewbg05.jpg';
 
+
 	$('#hero-ul a').on('click', function(){
 		$('a.active').removeClass('active');
 		$(this).addClass('active');
@@ -152,5 +153,84 @@ $( function() {
 
 
   $('.fancybox').fancybox();
+
+
+  var icons = new Skycons({
+  	'color':'#0074E4',
+  	'resizeClear': true
+  }),
+    list  = [
+      "clear-day", "clear-night", "partly-cloudy-day",
+      "partly-cloudy-night", "cloudy", "rain", "sleet", "snow", "wind",
+      "fog"
+    ],
+    i;
+
+	for(i = list.length; i--; )
+	  icons.set(list[i], list[i]);
+
+	icons.play();
+
+	// console.log(list);
+
+
+// http = require('http');
+
+var apiKey = 'bd7804a56f5a4248bfa222108162405';
+
+var options = {
+  host: 'api.apixu.com',
+  port: 80,
+  path: '/v1/current.json?key=' + apiKey + '&q=',
+  method: 'GET'
+};
+
+
+
+function currentWeather(query, callback){
+	options.path = '/v1/current.json?key=' + apiKey + '&q=' + query;
+	http.request(options, function(res) {
+	  res.setEncoding('utf8');
+	  res.on('data', function (chunk) {
+		console.log(chunk);
+	  });
+	  res.on('end', function (chunk) {
+	  });
+	}).on('error', function(err) {
+        // handle errors with the request itself
+        console.error('Error with the request:', err.message);
+        callback(err);
+    }).end();
+}
+
+
+
+
+	// var weather = require('./weatherlib');
+
+	errorHandler = function (){
+		console.log('got some error')
+	}
+	
+	//current weather takes pin code or location as first parameter, error handler callback as second
+	// weather.currentWeather(75089, errorHandler);
+
+
+
+
+
+
+
+
+
+	// { current.temp_f }
+
+	// var xhr = new XMLHttpRequest();
+	// xhr.open("GET", "http://api.apixu.com/v1/current.json?key=bd7804a56f5a4248bfa222108162405&q=75089", true);
+	// // Add your code below!
+	// xhr.send();
+	// console.log(xhr.status);
+	// console.log(xhr.statusText);
+
 
 } );
