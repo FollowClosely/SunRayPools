@@ -1,6 +1,7 @@
 @import 'partials/fonts';
 @import 'partials/var';
 @import 'partials/landing';
+@import 'partials/collection';
 
 @media screen and (max-width: 640px) {
 	.xs-hide {
@@ -64,7 +65,26 @@ input {
 
 .below-fold {
 	margin: 0 auto;
+	padding-top: 80px;
 	max-width: 1280px;
+}
+
+.title {
+	h2 {
+		font-family: $sans;
+		color: black;
+		margin: 0;
+		padding: 0;
+	}
+}
+.subtitle {
+	h3 {
+		margin: 5px 0 15px;
+		padding: 0;
+		color: #999;
+		font-size: 15px;
+		font-family: $sans;
+	}
 }
 
 .btn-main {
@@ -82,10 +102,14 @@ input {
 	margin-right: 0;
 }
 
+.title {
+
+}
+
+
 .hero-banner-wrapper {
 	position: relative
 }
-
 .hero {
 	min-height: 550px;
 	max-height: 550px;
@@ -472,9 +496,12 @@ input {
 	// justify-content: space-around;
   height:50px;
 	background: #fff;
-	// border-bottom:1px solid #ccc;
- //  box-shadow: 0 1px 4px rgba(0,0,0,0.15);
+	border-bottom:1px solid #ccc;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.15);
   z-index:1000;
+}
+.nav-sub-wrapper {
+	z-index: -1000
 }
 // nested flexbox 1 //
 .nav-logo-wrapper {
@@ -1210,6 +1237,7 @@ div.quote {
 		height: 75px;
 		border-radius: 50%;
 		border: 2px solid #fff;
+		transition: all 0.3s ease;
 	} a:hover {
 		img {
 			height: 100px;

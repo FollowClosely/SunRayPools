@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="assets/lib/bootstrap/css/bootstrap.css">
+  <link rel="stylesheet" href="assets/lib/font-awesome/font-awesome.min.css">
+  <link rel="stylesheet" href="assets/lib/fancybox/jquery.fancybox.css?v=2.1.5">
+  <link rel="stylesheet" href="assets/css/main.css">
+  <script src="assets/lib/handlebars/handlebars.runtime.min.js"></script>
+
+  <script src="partials/App.js"></script>
+  <script src="partials/Hero.js"></script>
+  <script src="partials/Banner.js"></script>
+  <script src="partials/Featured.js"></script>
+  <script src="partials/Resources.js"></script>
+  <script src="partials/Partners.js"></script>
+  <script src="partials/Foot.js"></script>
+
+	<script src="assets/lib/jquery/jquery-1.12.3.js"></script>
+	<script src="assets/lib/bootstrap/js/bootstrap.js"></script>
+	<script src="assets/lib/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+	<script src="assets/lib/skycons/skycons.js"></script>
+	<script src="assets/js/scripts.js"></script>
+	<title>Sun Ray Pools | Financing </title>
+</head>
+<body>
+
+<div id="navDiv"></div>
+<div id="landingMain" class="landingBG">
+
+
+<div id="special-features-section" class="section-wrapper">
+
+  <div class="section-header">
+    <h1>
+      Get A Head-Start On Your Project With Pre-Approved Financing!
+    </h1>
+  </div>
+
+  <div class="financing-item">
+    <p>
+      Many pool builders are struggling to get financing right now. But we have a team of lenders with money available right now for pool loans. If another builder or loan company has told you they can't help you, please give us a call. We've helped hundreds of people that other builders told "no."
+    </p>
+  </div>
+
+  <div class="financing-item">
+    <p>
+      Our providers offer pool loans with little or no equity, and very competitive rates for your unique situation. If you're interested in any of our financing programs, please give us a call at <a href="#">(972) 333-0714</a>.
+    </p>
+  </div>
+
+  <div class="financing-item">
+    <div class="section-subheader">
+      <h3>
+        Lyon Financial
+      </h3>
+    </div>
+    <p>
+      <strong>
+        Why choose Lyon Financial for your Pool Loan?</strong>
+    </p>
+    <div class="financing-item financing-list">
+      <ul>
+        <li>Because "Swimming Pool Loans" Is All We Do!</li>
+        <li>Over 32 years providing pool contractors and customers with reliable, effective and reasonable financing.</li>
+        <li>Lyon Financial has successfully funded over 200,000 swimming pool loans.</li>
+        <li>No Hassles - No Excuses - Quick Answers.</li>
+        <li>Lyon Financial has successfully funded over 200,000 swimming pool loans.</li>
+        <li>We are committed to providing superior service in a consistent manner.</li>
+        <li>Lyon respects your time and your privacy.</li>
+      </ul>
+    </div>
+    <p>
+      Call Jodie Lyon at <a href="#">(877) 754-5966</a> or <a href="#">Click to Apply Online</a>
+    </p>
+  </div>
+
+  <hr>
+
+  <div class="financing-item">
+    <div class="section-subheader">
+      <h3>
+        Certified Funding
+      </h3>
+    </div>
+    <p>
+      Certified Funding, L.P. is a pioneer in second lien lending. Please contact Teresa Sneed at <a href="#">(972) 248-0200</a> or Nancy Struthers <a href="#">(972) 955-9321</a> to start right away.
+    </p>
+  </div>
+
+</div>
+
+</div>
+<div class="clearfix"></div>
+<div id="partnersDiv"></div>
+<div id="footDiv"></div>
+</div><!-- #landingMain -->
+<script>
+  // template : App.hbs === navigation bar;
+  document.querySelector('#navDiv').innerHTML = MyApp.templates.App();
+  document.querySelector('#partnersDiv').innerHTML = MyApp.templates.Partners();
+  document.querySelector('#footDiv').innerHTML = MyApp.templates.Foot();
+</script>
+</body>
+</html>

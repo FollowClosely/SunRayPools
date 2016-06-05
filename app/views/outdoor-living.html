@@ -27,68 +27,71 @@
 </head>
 <body>
 
-  <div id="navDiv"></div>
-
-  <div id="landingMain" class="landingBG">
+<div id="navDiv"></div>
+<div id="landingMain" class="landingBG">
   	
-  	<div class="mainImg" style="background: url(assets/images/main-outdoor-living.jpg); background-size: cover; background-position: center center;">
+	<div class="mainImg" style="background: url(assets/images/bg-outdoor_living.jpg); background-size: cover; background-position: center center;">
 
-  		<div class="trapezoid-wrapper">
-	  		<h1 class="trapezoid"> More Than Just a Pool </h1>
-  		</div>
-  		<div class="landing-overlay">
-  			<div class="overlay-content">
-  				<div class="overlay-form">
-  					<div class="overlay-title">
-  						<h1>
-	  						List a Rental for Free
-  						</h1>
-  						<p>ENTER THE ADDRESS FOR YOUR LISTING</p>
-  						<form class="landing-form">
-  							<input id="landing-name" type="text" placeholder="Your Name" required>
-  							<input id="landing-zip" type="text" placeholder="Zip Code" required>
-  							<input id="landing-email" type="email" placeholder="Email Address" required>
-  							<button class="landing-button btn-green">Continue</button>
-  						</form>
-  					</div>
-  				</div>
+		<div class="trapezoid-wrapper">
+  		<h1 class="trapezoid">
+				Outdoors: Your New Lifestyle
+  		</h1>
+		</div>
+		<div class="landing-overlay">
+			<div class="overlay-content">
+				<div class="overlay-form">
+					<div class="overlay-title">
+						<h1>
+							So much more than just a pool.
+						</h1>
+						<p>
+							ENTER YOUR DETAILS TO RECEIVE YOUR FREE INFORMATION
+						</p>
+						<form class="landing-form">
+							<input id="landing-name" type="text" placeholder="Your Name" required>
+							<input id="landing-zip" type="text" placeholder="Zip Code" required>
+							<input id="landing-email" type="email" placeholder="Email Address" required>
+							<button class="landing-button btn-green">Continue</button>
+						</form>
+					</div>
+				</div>
 
-  				<div class="landing-contact-us">
-  					<p class="questions">Already have an account?</p>
-  					<div class="contact-us-btn">
-  						<button class="contact-btn btn-green" href="#">Sign in</a>
-  					</div>
-  					<p class="alt-question">Do you have a Postlets account?</p>
-  				</div>
-  			</div>
-  		</div>
-  	</div>
+				<div class="landing-contact-us">
+					<p class="questions">Have a question?</p>
+					<div class="contact-us-btn">
+						<button class="contact-btn btn-green" href="#">Call us</button>
+					</div>
+					<p class="alt-question">8am - 5pm, Mon - Fri</p>
+				</div>
+			</div>
+		</div>
+	</div>
 
-  	<div class="landing-details">
-  		<div class="sub-detail">
-  			Other Posting Options:
-  			<a href="#">For Sale By Owner</a>
-  			<a href="#">For Sale By Agent</a>
-  			<a href="#">Rental Properties with 50 or More Units</a>
-  		</div>
-  	</div>
+	<div class="landing-details">
+		<div class="sub-detail">
+			More Options:
+			<a href="#">Decks &amp; Patios</a>
+			<a href="#">Swim Spas</a>
+			<a href="#">Firepits &amp; Kitchens</a>
+		</div>
+	</div>
 
-		<div id="resourcesDiv"></div>
-		<div class="clearfix"></div>
+</div>
+<div id="resourcesDiv"></div>
 
-		<div id="partnersDiv"></div>
+<div class="clearfix"></div>
+<div id="partnersDiv"></div>
+<div id="footDiv"></div>
 
-		<div id="footDiv"></div>
+</div><!-- #landingMain -->
 
-  </div><!-- #landingMain -->
+<script>
+  // template : App.hbs === navigation bar;
+  document.querySelector('#navDiv').innerHTML = MyApp.templates.App();
+  document.querySelector('#resourcesDiv').innerHTML = MyApp.templates.Resources();
+  document.querySelector('#partnersDiv').innerHTML = MyApp.templates.Partners();
+  document.querySelector('#footDiv').innerHTML = MyApp.templates.Foot();
 
-  <script>
-    // template : App.hbs === navigation bar;
-    document.querySelector('#navDiv').innerHTML = MyApp.templates.App();
-    document.querySelector('#resourcesDiv').innerHTML = MyApp.templates.Resources();
-    document.querySelector('#partnersDiv').innerHTML = MyApp.templates.Partners();
-    document.querySelector('#footDiv').innerHTML = MyApp.templates.Foot();
-
-  </script>
+</script>
 </body>
 </html>

@@ -1,3 +1,29 @@
+.section-wrapper {
+	padding-top: 60px;
+	ul, li {
+		color: $darkGrey;
+	} li {
+		padding-left: 10px;
+	}
+}
+
+.section-header {
+	h1 {
+		color: $darkGrey;
+	}
+}
+.section-subheader {
+	h3 {
+		color: $darkGrey;
+	}
+}
+.special-features-item, .faq-item, .financing-item, .pentair-item, .sun-deep-item, .swim-spas-item, .swimming-pools-item, .outdoor-living-item, .about-us-item {
+	p {
+	color: $darkGrey;
+	}
+}
+
+
 .btn-green{
 	background: #74c005;
   color: #fff;
@@ -20,6 +46,8 @@
 	height: 570px;
 	width: 100%;
 	padding-top: 120px;
+	position: relative;
+	z-index: -1001;
 }
 .trapezoid{
 	font-family:$sans;
@@ -93,7 +121,7 @@ div.overlay-form{
 		left:0;
 		margin: 0 auto;
 		margin-top:0;
-		z-index:0;
+		z-index:-1000;
 	}
 }
 

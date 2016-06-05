@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="assets/lib/bootstrap/css/bootstrap.css">
+  <link rel="stylesheet" href="assets/lib/font-awesome/font-awesome.min.css">
+  <link rel="stylesheet" href="assets/lib/fancybox/jquery.fancybox.css?v=2.1.5">
+  <link rel="stylesheet" href="assets/css/main.css">
+  <script src="assets/lib/handlebars/handlebars.runtime.min.js"></script>
+
+  <script src="partials/App.js"></script>
+  <script src="partials/Hero.js"></script>
+  <script src="partials/Banner.js"></script>
+  <script src="partials/Featured.js"></script>
+  <script src="partials/Resources.js"></script>
+  <script src="partials/Partners.js"></script>
+  <script src="partials/Foot.js"></script>
+
+	<script src="assets/lib/jquery/jquery-1.12.3.js"></script>
+	<script src="assets/lib/bootstrap/js/bootstrap.js"></script>
+	<script src="assets/lib/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+	<script src="assets/lib/skycons/skycons.js"></script>
+	<script src="assets/js/scripts.js"></script>
+	<title>Sun Ray Pools | FAQs </title>
+</head>
+<body>
+
+<div id="navDiv"></div>
+<div id="landingMain" class="landingBG">
+
+<div id="faq-section" class="section-header">
+
+	<div class="faq-header">
+		<h1>Have questions about building, maintaining or just owning a pool? We've assembled some questions below to help you know what to expect.</h1>
+	</div>
+
+	<div class="faq-item">
+		<div class="faq-question">
+			<h3>How does the construction process work?</h3>
+		</div>
+		<div class="faq-answer">
+			<p>First, our staff will work with you to finalize the design, add-on options, decking and other such details. Once all details are finalized, we will begin by grading the site and forming it into the necessary shape. We’ll then proceed with pre-plumbing and electrical, wall construction, decking, landscaping, and accessories. Although the construction process may be unsightly, the final process will be the envy of your neighborhood.</p>
+		</div>
+	</div>
+
+	<div class="faq-item">
+		<div class="faq-question">
+			<h3>Can you help me design the best pool for my backyard?</h3>
+		</div>
+		<div class="faq-answer">
+			<p>Certainly! Our staff will help you select the right size, shape and overall layout of the best pool for the area you have to work with. We understand that each home is different and each homeowner’s tastes and styles are different. We will help you with all of the details, including any add-on options, such as waterfalls, landscaping, etc. that you want to include.</p>
+		</div>
+	</div>
+
+
+	<div class="faq-item">
+		<div class="faq-question">
+			<h3>Will you support and help maintain my pool after it’s completed?</h3>
+		</div>
+		<div class="faq-answer">
+			<p>We build relationships. Just because we’ve completed your pool does not mean that our relationship ends. We will be with you to help service and maintain your pool long after it’s finished. The level of involvement we have in maintaining your pool is up to you. We have set-up a maintenance schedule to keep your pool in peak condition throughout the year. </p>
+		</div>
+	</div>
+
+	<div class="faq-item">
+		<div class="faq-question">
+			<h3>How can I be assured you’re using quality parts and equipment when building my pool?</h3>
+		</div>
+		<div class="faq-answer">
+			<p>We use only the best parts and equipment available in the industry. When speaking with our staff, you can learn more specifically about the brands that we sell. Our primary supplier, SCP Pool Corporation, is our source for many of the name brands you are probably familiar with.</p>
+		</div>
+	</div>
+
+	<div class="faq-item">
+		<div class="faq-question">
+			<h3>How can I be assured that your company is a reputable, quality pool builder?</h3>
+		</div>
+		<div class="faq-answer">
+			<p>First of all, check our list of references. There is no better way to become comfortable with our quality standards and customer service than to speak directly with our existing customers. You can also check with other local professional organizations to research our reputation and workmanship.</p>
+		</div>
+	</div>
+
+	<div class="faq-item">
+		<div class="faq-question">
+			<h3>
+				<a href="sun-deep-heat.html">What is your "Deep Heat" feature all about?</a>
+			</h3>
+		</div>
+	</div>
+
+</div>
+
+</div>
+<div class="clearfix"></div>
+<div id="partnersDiv"></div>
+<div id="footDiv"></div>
+</div><!-- #landingMain -->
+<script>
+  // template : App.hbs === navigation bar;
+  document.querySelector('#navDiv').innerHTML = MyApp.templates.App();
+  document.querySelector('#partnersDiv').innerHTML = MyApp.templates.Partners();
+  document.querySelector('#footDiv').innerHTML = MyApp.templates.Foot();
+</script>
+</body>
+</html>
