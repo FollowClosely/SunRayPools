@@ -106,9 +106,9 @@ input {
 
 }
 
-
 .hero-banner-wrapper {
-	position: relative
+	position: relative;
+	// z-index: -1;
 }
 .hero {
 	min-height: 550px;
@@ -480,8 +480,8 @@ input {
 	margin: 0;
   height: 50px;
   position: relative;
-  border-bottom: 1px solid #ccc;
-  box-shadow: 0 1px 4px rgba(0,0,0,0.15);
+  // border-bottom: 1px solid #ccc;
+  // box-shadow: 0 1px 4px rgba(0,0,0,0.15);
 }
 
 .nav-logo-wrapper, .nav-ghost-wrapper, .nav-map-wrapper, .nav-social-wrapper {

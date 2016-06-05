@@ -31,7 +31,7 @@ $( function() {
 	$('#hero01').on('click', function(e){
 		e.preventDefault();
 
-		$('#hero').attr('style',
+		$('.hero').attr('style',
 			'background: url(' + imgDir + hero1 + 
 			'); background-size: cover; background-position: center center; transition: all 0.4s ease;');
 
@@ -44,7 +44,7 @@ $( function() {
 	$('#hero02').on('click', function(e){
 		e.preventDefault();
 
-		$('#hero').attr('style',
+		$('.hero').attr('style',
 			'background: url(' + imgDir + hero2 + 
 			'); background-size: cover; background-position: center top; transition: all 0.4s ease;');	
 		$('#hero-header').replaceWith('<h1 id="hero-header">' + header2 + '</h1>');
@@ -55,7 +55,7 @@ $( function() {
 	$('#hero03').on('click', function(e){
 		e.preventDefault();
 
-		$('#hero').attr('style',
+		$('.hero').attr('style',
 			'background: url(' + imgDir + hero3 + 
 			'); background-size: cover; background-position: center top; transition: all 0.4s ease;');
 		$('#hero-header').replaceWith('<h1 id="hero-header">' + header3 + '</h1>');
@@ -68,7 +68,7 @@ $( function() {
 
 	$('#hero04').on('click', function(e){
 		e.preventDefault();
-		$('#hero').attr('style',
+		$('.hero').attr('style',
 			'background: url(' + imgDir + hero4 + 
 			'); background-size: cover; background-position: center top; transition: all 0.4s ease;');
 		$('#hero-header').replaceWith('<h1 id="hero-header">' + header4 + '</h1>');

@@ -2,60 +2,34 @@
 
 var gulp        = require('gulp'),
 		browserSync = require('browser-sync'),
-		reload      = browserSync.reload,
+			reload    = browserSync.reload,
 		concat      = require('gulp-concat'),
+		config      = require('./gulp.config'),
 		declare     = require('gulp-declare'),
 		del         = require('del'),
-		util        = require('gulp-util'),
 		handlebars  = require('gulp-handlebars'),
+		imageMin    = require('gulp-imagemin'),
 		prefixer    = require('gulp-autoprefixer'),
 		rename      = require('gulp-rename'),
 		sass        = require('gulp-sass'),
 		sourcemaps  = require('gulp-sourcemaps'),
 		stream      = require('vinyl-source-stream'),
+		taskListing = require('gulp-task-listing'),
+		util        = require('gulp-util'),
 		wrap        = require('gulp-wrap');
 
-var config = {
-	browserPort: 3000,
-	UIPort: 3001,
-	sourceDir: './app/',
-	buildDir: './build/',
-	scripts: {
-		src: 'app/assets/js/**/*',
-		dest: 'build/assets/js'
-	},
-	styles: {
-		src: 'app/assets/sass/**/*.scss',
-		dest: 'build/assets/css'
-	},
-	html: {
-		src: ['app/index.html', 'app/views/**/*.html'],
-		dest: 'build/'
-	},
-	views: {
-		src: 'app/views/**/*.hbs',
-		dest: 'build/'
-	},
-	lib: {
-		src: 'app/assets/lib/**/*',
-		dest: 'build/assets/lib'
-	},
-	images: {
-		src: 'app/assets/images/**/*',
-		dest: 'build/assets/images'
-	},
-	fonts: {
-		src: ['app/assets/fonts/**/*'],
-		dest: 'build/assets/fonts'
-	}
-};
-
-
-gulp.task('default', ['watch', 'serve'], function() {
+gulp.task('default', ['clean', 'watch', 'serve'], function() {
 	console.log('gulp gulp gulp');
 });
 
-gulp.task('styles', ['clean-styles'], function(){
+gulp.task('help', taskListing);
+
+gulp.task('clean', function(){
+	var files = config.buildDir;
+	clean(files);
+});
+
+gulp.task('styles', function(){
 	return gulp.src(config.styles.src)
 		.pipe(sourcemaps.init())
 		.pipe(sass())
@@ -64,20 +38,18 @@ gulp.task('styles', ['clean-styles'], function(){
 		.pipe(gulp.dest(config.styles.dest))
 		.pipe(reload({stream: true}));
 });
-
 gulp.task('clean-styles', function(){
 	var files = config.styles.dest;
 	clean(files);
 });
 
-gulp.task('scripts', ['clean-scripts'], function() {
+gulp.task('scripts', function() {
   return gulp.src(config.scripts.src)
     .pipe(sourcemaps.init())
     .pipe(sourcemaps.write())
     .pipe(gulp.dest(config.scripts.dest))
 		.pipe(reload({stream: true}));
 });
-
 gulp.task('clean-scripts', function(){
 	var files = config.scripts.dest;
 	clean(files);
@@ -158,8 +130,9 @@ gulp.task('serve', function(){
 
 });
 
-//////////////
-
+// =============================== //
+// ========== FUNCTIONS ========== //
+// =============================== //
 function log(msg){
 	if(typeof(msg) === 'object') {
 		for (var item in msg) {
