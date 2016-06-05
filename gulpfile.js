@@ -7,6 +7,7 @@ var gulp        = require('gulp'),
 		stream      = require('vinyl-source-stream'),
 		rename      = require('gulp-rename'),
 		sass        = require('gulp-sass'),
+		prefixer    = require('gulp-autoprefixer'),
 		gutil       = require('gulp-util'),
 		handlebars  = require('gulp-handlebars'),
 		wrap        = require('gulp-wrap'),
@@ -58,6 +59,7 @@ gulp.task('styles', function(){
 	return gulp.src(config.styles.src)
 		.pipe(sourcemaps.init())
 		.pipe(sass())
+		.pipe(prefixer({ browsers: ['last 2 version', '> 5%' ]}))
 		.pipe(sourcemaps.write())
 		.pipe(gulp.dest(config.styles.dest))
 		.pipe(reload({stream: true}));
