@@ -18,7 +18,7 @@ var gulp        = require('gulp'),
 		util        = require('gulp-util'),
 		wrap        = require('gulp-wrap');
 
-gulp.task('default', ['clean', 'watch', 'serve'], function() {
+gulp.task('default', ['watch', 'serve'], function() {
 	console.log('gulp gulp gulp');
 });
 
