@@ -62,7 +62,10 @@ a:focus {
 input {
 	color: $darkGrey;
 }
-
+.page-width {
+	max-width: 1280px;
+	margin: 0 auto;
+}
 .below-fold {
 	margin: 0 auto;
 	padding-top: 80px;
@@ -95,7 +98,6 @@ input {
 	&:hover {
 		darken:($blue, 15%);
     background: linear-gradient(to bottom,#0074e4,#1b5098);
-		// border: 0px;
 	}
 }
 .row {
@@ -169,21 +171,6 @@ input {
     }
 	}
 }
-
-// #hero-pools:after {
-//   content: '';
-//   border-radius: 0!important;
-//   background: 0 0!important;
-//   border-color: transparent transparent #fff;
-//   border-style: solid;
-//   border-width: 0 10px 10px;
-//   display: inline-block;
-//   margin-bottom: -1px;
-//   margin-left: 10px;
-//   top: auto;
-//   position: absolute;
-//   left: 0%;
-// }
 
 .hero-cta-btn {
 	position: relative;
@@ -287,9 +274,6 @@ input {
 		line-height: 1.4;
 	}
 }
-// .resources-wrapper {
-// 	max-height: 400px;
-// }
 .col-xs-10 {
 	margin-bottom: 5rem;
 }

@@ -27,10 +27,10 @@
 .btn-green{
 	background: #74c005;
   color: #fff;
+  border: 0px;
   &:hover {
   	background-color: #5d9900;
-    background: -webkit-linear-gradient(bottom,#74c005,#5d9900);
-    background: linear-gradient(to top,#74c005,#5d9900);
+    background: linear-gradient(to bottom,#74c005,#5d9900);
     background-repeat: repeat-x;
     color: #fff;
   }
@@ -210,7 +210,7 @@ button.landing-button{
 	height: 40px;
 	background: #74c005;
   color: #fff;
-	border: 1px solid transparent;
+	// border: 1px solid transparent;
   border-radius: 5px;
   cursor: pointer;
   display: inline-block;
@@ -243,7 +243,7 @@ div.contact-us-btn{
 		height: 40px;
 		line-height: 1.85em;
 		color: #fff;
-		border: 1px solid transparent;
+		border: 0px;
     border-radius: 5px;
     cursor: pointer;
     display: inline-block;
