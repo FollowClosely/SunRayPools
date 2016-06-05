@@ -2,18 +2,18 @@
 
 var gulp        = require('gulp'),
 		browserSync = require('browser-sync'),
-		rename      = require('gulp-rename'),
-		sourcemaps  = require('gulp-sourcemaps'),
-		stream      = require('vinyl-source-stream'),
+		reload      = browserSync.reload,
+		concat      = require('gulp-concat'),
+		declare     = require('gulp-declare'),
+		del         = require('del'),
+		util        = require('gulp-util'),
+		handlebars  = require('gulp-handlebars'),
+		prefixer    = require('gulp-autoprefixer'),
 		rename      = require('gulp-rename'),
 		sass        = require('gulp-sass'),
-		prefixer    = require('gulp-autoprefixer'),
-		gutil       = require('gulp-util'),
-		handlebars  = require('gulp-handlebars'),
-		wrap        = require('gulp-wrap'),
-		declare     = require('gulp-declare'),
-		concat      = require('gulp-concat'),
-		reload      = browserSync.reload;
+		sourcemaps  = require('gulp-sourcemaps'),
+		stream      = require('vinyl-source-stream'),
+		wrap        = require('gulp-wrap');
 
 var config = {
 	browserPort: 3000,
@@ -55,7 +55,7 @@ gulp.task('default', ['watch', 'serve'], function() {
 	console.log('gulp gulp gulp');
 });
 
-gulp.task('styles', function(){
+gulp.task('styles', ['clean-styles'], function(){
 	return gulp.src(config.styles.src)
 		.pipe(sourcemaps.init())
 		.pipe(sass())
@@ -65,12 +65,22 @@ gulp.task('styles', function(){
 		.pipe(reload({stream: true}));
 });
 
-gulp.task('scripts', function() {
+gulp.task('clean-styles', function(){
+	var files = config.styles.dest;
+	clean(files);
+});
+
+gulp.task('scripts', ['clean-scripts'], function() {
   return gulp.src(config.scripts.src)
     .pipe(sourcemaps.init())
     .pipe(sourcemaps.write())
     .pipe(gulp.dest(config.scripts.dest))
 		.pipe(reload({stream: true}));
+});
+
+gulp.task('clean-scripts', function(){
+	var files = config.scripts.dest;
+	clean(files);
 });
 
 gulp.task('html', function(){
@@ -147,6 +157,26 @@ gulp.task('serve', function(){
 	});
 
 });
+
+//////////////
+
+function log(msg){
+	if(typeof(msg) === 'object') {
+		for (var item in msg) {
+			if (msg.hasOwnProperty(item)) {
+				util.log(util.colors.blue(msg[item]));
+			}
+		}
+	} else {
+		util.log(util.colors.blue(msg));
+	}
+}
+
+function clean(path) {
+	log('Cleaning: ' + util.colors.blue(path));
+	del(path);
+}
+
 
 
 
