@@ -480,6 +480,7 @@ input {
 	margin: 0;
   height: 50px;
   position: relative;
+  z-index: 1500;
   // border-bottom: 1px solid #ccc;
   // box-shadow: 0 1px 4px rgba(0,0,0,0.15);
 }
@@ -492,7 +493,6 @@ input {
 .nav-flex {
 	display: flex;
   padding: 0 calc((100% - 1240px) / 2);
-
 	// justify-content: space-around;
   height:50px;
 	background: #fff;
