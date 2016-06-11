@@ -216,7 +216,23 @@ function currentWeather(query, callback){
 	// weather.currentWeather(75089, errorHandler);
 
 
+	// forecast_request = $.get('https://api.forecast.io/forecast/e10266c0c6a480f436825e391c6df16f/32.5359,-97.3128', function(f){
+	// 	console.log(f);
+	// });
 
+
+	// forecast_request = $.ajax({
+	// 	type: 'GET',
+	// 	url: 'https://api.forecast.io/forecast/e10266c0c6a480f436825e391c6df16f/32.5359,-97.3128',
+	// 	dataType: 'json',
+	// 	success: function(data){
+	// 		console.log(data);
+	// 	},
+	// 	error: function(){
+	// 		console.log(error);
+	// 	}
+	// });
+		
 
 
 
