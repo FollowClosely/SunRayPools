@@ -8,7 +8,7 @@ var gulp        = require('gulp'),
 		declare     = require('gulp-declare'),
 		del         = require('del'),
 		handlebars  = require('gulp-handlebars'),
-		imageMin    = require('gulp-imagemin'),
+		imgMin      = require('gulp-imagemin'),
 		prefixer    = require('gulp-autoprefixer'),
 		rename      = require('gulp-rename'),
 		sass        = require('gulp-sass'),
@@ -90,13 +90,22 @@ gulp.task('lib', function(){
 
 gulp.task('images', function() {
 	return gulp.src(config.images.src)
-		.pipe(imageMin({optimizationLevel: 4}))
+		.pipe(imgMin({optimizationLevel: 5}))
 		.pipe(gulp.dest(config.images.dest))
 		.pipe(reload({stream: true}));
 });
 
 gulp.task('watch', [
-	'styles', 'scripts', 'html', 'templates', 'fonts', 'lib', 'images'
+	'styles', 'scripts', 'html', 'templates'
+],
+	function() {
+		gulp.watch(config.styles.src, ['styles']);
+		gulp.watch(config.scripts.src, ['scripts']);
+		gulp.watch(config.html.src, ['html']);
+		gulp.watch(config.views.src, ['templates']);
+});
+gulp.task('watch-all', [
+	'styles', 'scripts', 'html', 'templates', 'lib', 'fonts', 'images', 'serve'
 ],
 	function() {
 		gulp.watch(config.styles.src, ['styles']);

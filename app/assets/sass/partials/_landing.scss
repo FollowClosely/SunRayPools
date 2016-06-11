@@ -47,7 +47,9 @@
 	width: 100%;
 	padding-top: 120px;
 	position: relative;
-	// z-index: -1001;
+	@media all and (max-width: 640px) {
+		height: 640px;
+	}
 }
 .trapezoid{
 	font-family:$sans;
@@ -81,6 +83,10 @@
     right: -1em;
     border-top-color: transparent;
 	}
+	@media all and (max-width: 640px) {
+		font-size: 30px;
+		padding-top: 16px
+	}
 }
 
 div.trapezoid-wrapper {
@@ -94,6 +100,10 @@ div.trapezoid-wrapper {
   background-color: rgba(0,116,228,.9);
 	width:100%;
 	max-width:1200px;
+	@media all and (max-width: 640px) {
+		height: 320px;
+		padding-top: 10px;
+	}
 }
 
 
@@ -115,7 +125,23 @@ div.overlay-form{
 		margin: 10px auto;
 		font-family: $sans;
 	}
+	@media all and (max-width: 999px) {
+		border-right: none;
+		padding-top: 0px;
+		width: 850px;
+	}
+	@media all and (max-width: 640px) {
+		h1 {
+			display: none !important;
+		}
+		p {
+			max-width: 400px;
+			margin-left: 0;
+			font-size: 24px;
+		}
+	}
 }
+
 @media screen and (min-width:767px) {
 	div.nav-sub-wrapper {
 		left:0;
@@ -179,6 +205,9 @@ div.landing-details{
   } a:hover {
   	color: $blueDark;
   }
+  @media all and (max-width: 640px) {
+  	display: none !important;
+  }
 }
 div.sub-detail{
 
@@ -189,6 +218,36 @@ div.sub-detail{
 	input{
 		height:40px;
 		padding-left:5px;
+	}
+	@media all and (max-width: 767px) {
+		input#landing-name {
+			width: 390px;			
+		}		
+		input#landing-zip {
+			width: 120px;
+		}		
+		input#landing-email {
+			width: 330px;
+		}
+		button.landing-button {
+			width: 180px;
+		}
+	}
+	@media all and (max-width: 640px) {
+		display: flex;
+		flex-direction: column;			
+		input {
+			margin: 0;
+			height: 36px;
+			max-width: 440px;
+			min-width: 440px;
+		}
+		button {
+			margin-top: 5px;
+			max-width: 440px;
+			min-width: 440px;
+
+		}
 	}
 }
 input#landing-name{
@@ -208,6 +267,7 @@ input#landing-zip{
 
 button.landing-button{
 	height: 40px;
+	width: 200px;
 	background: #74c005;
   color: #fff;
 	// border: 1px solid transparent;
@@ -217,7 +277,6 @@ button.landing-button{
   padding: .4em .67em;
   text-align: center;
   white-space: normal;
-	width: 200px;
   line-height: 1.5;
 }
 .landing-contact-us{
@@ -232,6 +291,9 @@ button.landing-button{
 	} p.alt-question {
 		margin-top: .8em;
 		font-size:13px;
+	}
+	@media all and (max-width: 999px) {
+		display: none
 	}
 }
 
